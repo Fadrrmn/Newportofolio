@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadhlurrahman Naufal — Front-End Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="wrap">
+            <div class="brand">Fadhlurrahman Naufal<span class="cursor"></span></div>
+            <div class="navlinks">
+                <a href="#beranda">Beranda</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#proyek">Proyek</a>
+                <a href="#sertifikat">Sertifikat</a>
+                <a class="cta" href="https://www.dicoding.com/users/fadhlurrahman_6b7z/academies" target="_blank" rel="noopener">Profil Dicoding ↗</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="beranda">
+        <canvas id="hero-canvas"></canvas>
+        <div class="wrap hero-grid">
+            <div>
+                <div class="eyebrow">whoami</div>
+                <h1 class="name">Fadhlurrahman<br>Naufal</h1>
+                <div class="role">Calon cybersecurity enginnering &amp; Mahasiswa IT </div>
+                <p class="lede">
+                    Saya sedang belajar membangun website dengan HTML, CSS, dan JavaScript.
+                    Halaman ini adalah submission tugas akhir kelas "Membuat Website" di Dicoding —
+                    kini dilengkapi visual 3D dan galeri sertifikat.
+                </p>
+                <div class="btnrow">
+                    <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="#tentang" class="btn btn-outline">Tentang Saya</a>
+                </div>
+            </div>
+  
+        </div>
+    </section>
+
+    <section id="tentang">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="index">01<span class="sep">—</span>Tentang</div>
+                <h2 class="title">Tentang Saya</h2>
+            </div>
+            <div class="about-body">
+                <div class="about-text">
+                    <p>
+                        Halo! Saya Fadhlurrahman Naufal Nugraha, mahasiswa Teknologi Rekayasa Komputer di
+                        Politeknik Caltex Riau. Saya memiliki ketertarikan di bidang pengembangan aplikasi, web
+                        development, jaringan komputer, IoT, dan cybersecurity. Selama perkuliahan, saya telah
+                        mengerjakan berbagai project, mulai dari membangun aplikasi berbasis web dan Android,
+                        mengembangkan sistem IoT menggunakan ESP32, hingga melakukan konfigurasi dan simulasi
+                        jaringan komputer.
+                    </p>
+                    <p>
+                        Saya adalah seseorang yang senang mencoba hal baru, belajar melalui praktik, dan
+                        memecahkan masalah secara bertahap. Saya menyadari bahwa masih banyak hal yang perlu
+                        saya pelajari, sehingga saya terus berusaha meningkatkan kemampuan teknis maupun
+                        kemampuan bekerja dalam tim. Tujuan saya adalah terus berkembang sebagai seorang IT
+                        enthusiast dan membangun pengalaman melalui berbagai project yang dapat memberikan
+                        manfaat serta menjadi bagian dari perjalanan karier saya di bidang teknologi.
+                    </p>
+                    <div class="skill-title">// skill</div>
+                    <div class="chips">
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">Flexbox</span>
+                        <span class="chip">C</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">PHP</span>
+                        <span class="chip">JAVA</span>
+                        <span class="chip">KOTLIN</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">Git &amp; GitHub</span>
+                        <span class="chip">Responsive Design</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-card">
+                        <div class="stat-num">4+</div>
+                        <div class="stat-label">Proyek diselesaikan / sedang berjalan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">12</div>
+                        <div class="stat-label">Skill &amp; tools yang dikuasai</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">6+</div>
+                        <div class="stat-label">Sertifikat kelas Dicoding</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyek">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="index">02<span class="sep">—</span>Proyek</div>
+                <h2 class="title">Proyek</h2>
+            </div>
+            <div class="proj-layout">
+                <div class="proj-grid">
+                    <div class="card3d-wrap">
+                        <div class="proj-card" data-tilt>
+                            <span class="proj-dot"></span>
+                            <div class="proj-num">Proyek 01</div>
+                            <h3>Aplikasi Trash to Cash</h3>
+                            <p>Projek UAS mata kuliah Pemrograman Mobile berbasis aplikasi Android, berfokus
+                                membantu para pengepul menjual barang bekas dan memudahkan proses transaksi.</p>
+                            <span class="detail">Lihat detail →</span>
+                        </div>
+                    </div>
+                    <div class="card3d-wrap">
+                        <div class="proj-card" data-tilt>
+                            <span class="proj-dot"></span>
+                            <div class="proj-num">Proyek 02</div>
+                            <h3>IoT Detektor Rupiah</h3>
+                            <p>Projek UAS mata kuliah MSE, berfokus mendeteksi mata uang rupiah dengan output
+                                mini speaker dan notifikasi Telegram saat nilai uang terbaca oleh sensor.</p>
+                            <span class="detail">Lihat detail →</span>
+                        </div>
+                    </div>
+                    <div class="card3d-wrap">
+                        <div class="proj-card" data-tilt>
+                            <span class="proj-dot"></span>
+                            <div class="proj-num">Proyek 03</div>
+                            <h3>Website Donat Marisu</h3>
+                            <p>Website kedua saya, dibuat untuk membantu penjualan donat sebuah UKM.
+                                Masih dalam tahap pengembangan lebih lanjut.</p>
+                            <span class="detail">Lihat detail →</span>
+                        </div>
+                    </div>
+                    <div class="card3d-wrap">
+                        <div class="proj-card" data-tilt>
+                            <span class="proj-dot"></span>
+                            <div class="proj-num">Proyek 04</div>
+                            <h3>Website Portofolio</h3>
+                            <p>Website portofolio pertama saya, berisi informasi diri, skill, dan proyek —
+                                kini tampil dengan visual 3D dan galeri sertifikat.</p>
+                            <span class="detail">Lihat detail →</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img class="avatar" src="img/foto.png" alt="Fadhlurrahman Naufal">
+                    <h3>Fadhlurrahman Naufal</h3>
+                    <div class="profile-role">Front-End Developer</div>
+                    <div class="meta-row"><span class="k">LOKASI</span><span class="v">Kota Pekanbaru, Indonesia</span>
+                    </div>
+                    <div class="meta-row"><span class="k">STATUS</span><span class="v">Peserta Dicoding,
+                            Mahasiswa</span></div>
+                    <div class="meta-row"><span class="k">EMAIL</span><span
+                            class="v">fadlurrahmannaufal20@email.com</span></div>
+                    <div class="btnrow">
+                        <a href="https://www.dicoding.com/users/fadhlurrahman_6b7z/academies" target="_blank" rel="noopener" class="btn btn-primary">Lihat Profil Dicoding</a>
+                        <a href="#sertifikat" class="btn btn-outline">Sertifikat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sertifikat">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="index">03<span class="sep">—</span>Sertifikat</div>
+                <h2 class="title">Sertifikat</h2>
+            </div>
+            <div class="cert-filter" id="certFilter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="jaringan">Jaringan &amp; IoT</button>
+            </div>
+            <div class="cert-grid" id="certGrid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="mono">© 2026 Fadhlurrahman Naufal — dibangun dengan HTML, CSS, JS &amp; Three.js</div>
+            <div class="mono">Submission "Membuat Website" · Dicoding</div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="certModal">
+        <div class="modal">
+            <div class="modal-cert-visual">
+                <div class="modal-close" id="certModalClose">✕</div>
+                <svg class="seal" viewBox="0 0 64 64" fill="none" id="modalSeal">
+                    <circle cx="32" cy="26" r="18" stroke="#e2664f" stroke-width="2.5" />
+                    <circle cx="32" cy="26" r="11" stroke="#f08a71" stroke-width="1.5" />
+                    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#e2664f" stroke-width="2.5"
+                        stroke-linejoin="round" fill="none" />
+                    <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <div class="cert-thumb-org"
+                    style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:#5c6b62;text-transform:uppercase;">
+                    DICODING INDONESIA</div>
+            </div>
+            <div class="modal-info">
+                <div class="index" id="modalIndex">SERTIFIKAT</div>
+                <h3 id="modalTitle">Judul Sertifikat</h3>
+                <div class="meta-row"><span class="k">PENERBIT</span><span class="v" id="modalIssuer">Dicoding</span>
+                </div>
+                <div class="meta-row"><span class="k">TANGGAL TERBIT</span><span class="v" id="modalDate">—</span></div>
+                <div class="meta-row"><span class="k">ID SERTIFIKAT</span><span class="v" id="modalId">—</span></div>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modalLink">Lihat Sertifikat Asli
+                    ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        /* ============ CERTIFICATE DATA ============
+           Ganti nilai di bawah ini dengan data sertifikat asli kamu.
+           Field "img" boleh diisi path/URL gambar hasil scan sertifikat;
+           jika dikosongkan, kartu memakai tampilan lambang default. */
+        const certificates = [
+            {
+                title: "Belajar Dasar Pemrograman Web",
+                issuer: "Dicoding Indonesia",
+                date: "agustus 2026",
+                id: "JMOZ1234ABCD",
+                category: "web",
+                tag: "Web Dev",
+                img: "sertifikat/sertifikat-belajarpemrrogrammanweb.pdf",
+                link: "sertifikat-belajarpemrrogrammanweb.pdf"
+            },
+            {
+                title: "Belajar Dasar AI",
+                issuer: "Dicoding Indonesia",
+                date: "Feb 2026",
+                id: "JMOZ5678EFGH",
+                category: "web",
+                tag: "AI",
+                img: "sertifikat/sertifikat_belajardasarai.pdf",
+                link: "sertifikat/sertifikat_belajardasarai.pdf"
+            },
+            {
+                title: "Memulai Pemrograman dengan Kotlin",
+                issuer: "Dicoding Indonesia",
+                date: "Mar 2025",
+                id: "JMOZ9012IJKL",
+                category: "mobile",
+                tag: "Mobile",
+                img: null,
+                link: "#"
+            },
+            {
+                title: "Belajar Fundamental Aplikasi Android",
+                issuer: "Dicoding Indonesia",
+                date: "Apr 2025",
+                id: "JMOZ3456MNOP",
+                category: "mobile",
+                tag: "Mobile",
+                img: null,
+                link: "#"
+            },
+            {
+                title: "Belajar Jaringan Komputer untuk Pemula",
+                issuer: "Dicoding Indonesia",
+                date: "Mei 2025",
+                id: "JMOZ7890QRST",
+                category: "jaringan",
+                tag: "Jaringan",
+                img: null,
+                link: "#"
+            },
+            {
+                title: "Belajar Dasar Sistem IoT dengan ESP32",
+                issuer: "Dicoding Indonesia",
+                date: "Jun 2025",
+                id: "JMOZ2468UVWX",
+                category: "jaringan",
+                tag: "IoT",
+                img: null,
+                link: "#"
+            }
+        ];
+
+        const sealSVG = `<svg class="seal" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="26" r="18" stroke="#e2664f" stroke-width="2.5"/>
+  <circle cx="32" cy="26" r="11" stroke="#f08a71" stroke-width="1.5"/>
+  <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#e2664f" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+  <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+        const certGrid = document.getElementById('certGrid');
+
+        function renderCerts(filter) {
+            certGrid.innerHTML = '';
+            certificates
+                .filter(c => filter === 'all' || c.category === filter)
+                .forEach((c, i) => {
+                    const card = document.createElement('div');
+                    card.className = 'cert-card';
+                    card.setAttribute('data-tilt-cert', '');
+                                        const visual = c.img
+                                                ? (c.img.toLowerCase().endsWith('.pdf')
+                                                        ? `<object class="cert-image cert-pdf" data="${c.img}" type="application/pdf" aria-label="${c.title}"></object>`
+                                                        : `<img class="cert-image" src="${c.img}" alt="${c.title}">`)
+                                                : `${sealSVG}<div class="org">Dicoding Indonesia</div>`;
+                                        card.innerHTML = `
+        <div class="cert-thumb">
+          <span class="cert-tag">${c.tag}</span>
+                    ${visual}
+        </div>
+        <div class="cert-body">
+          <h4>${c.title}</h4>
+          <div class="cert-meta">
+            <span>${c.date}</span>
+            <span>${c.id}</span>
+          </div>
+        </div>
+      `;
+                    card.addEventListener('click', () => openModal(c));
+                    certGrid.appendChild(card);
+                });
+            attachTilt('[data-tilt-cert]', 6);
+        }
+
+        renderCerts('all');
+
+        document.getElementById('certFilter').addEventListener('click', (e) => {
+            if (!e.target.classList.contains('filter-btn')) return;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            renderCerts(e.target.dataset.filter);
+        });
+
+        /* ---------- Modal ---------- */
+        const modal = document.getElementById('certModal');
+        function openModal(c) {
+            document.getElementById('modalIndex').textContent = c.tag.toUpperCase();
+            document.getElementById('modalTitle').textContent = c.title;
+            document.getElementById('modalIssuer').textContent = c.issuer;
+            document.getElementById('modalDate').textContent = c.date;
+            document.getElementById('modalId').textContent = c.id;
+            document.getElementById('modalLink').href = c.link;
+            const modalVisual = document.querySelector('.modal-cert-visual');
+            const existingImage = modalVisual.querySelector('.modal-cert-image');
+            if (existingImage) existingImage.remove();
+            if (c.img) {
+                const image = c.img.toLowerCase().endsWith('.pdf')
+                    ? document.createElement('object')
+                    : document.createElement('img');
+                image.className = 'modal-cert-image';
+                image.setAttribute('aria-label', c.title);
+                if (image.tagName === 'OBJECT') {
+                    image.data = c.img;
+                    image.type = 'application/pdf';
+                } else {
+                    image.src = c.img;
+                    image.alt = c.title;
+                }
+                modalVisual.insertBefore(image, modalVisual.firstChild);
+                modalVisual.querySelector('.seal').style.display = 'none';
+                modalVisual.querySelector('.cert-thumb-org').style.display = 'none';
+            } else {
+                modalVisual.querySelector('.seal').style.display = '';
+                modalVisual.querySelector('.cert-thumb-org').style.display = '';
+            }
+            modal.classList.add('open');
+        }
+        document.getElementById('certModalClose').addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+        /* ---------- 3D tilt effect for cards ---------- */
+        function attachTilt(selector, strength = 8) {
+            document.querySelectorAll(selector).forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const r = el.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width - 0.5;
+                    const y = (e.clientY - r.top) / r.height - 0.5;
+                    el.style.transform = `rotateY(${x * strength}deg) rotateX(${-y * strength}deg) translateZ(0)`;
+                });
+                el.addEventListener('mouseleave', () => { el.style.transform = 'rotateY(0deg) rotateX(0deg)'; });
+            });
+        }
+        attachTilt('[data-tilt]', 8);
+
+        /* ============ THREE.JS HERO NETWORK ============ */
+        (function () {
+            const canvas = document.getElementById('hero-canvas');
+            const heroSection = document.querySelector('.hero');
+            let width = heroSection.clientWidth;
+            let height = heroSection.clientHeight;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
+            camera.position.set(0, 0, 34);
+
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const group = new THREE.Group();
+            scene.add(group);
+
+            /* Node network (particles + connecting lines) */
+            const NODE_COUNT = 70;
+            const nodePositions = [];
+            const nodes = new THREE.Group();
+            const nodeGeo = new THREE.SphereGeometry(0.14, 8, 8);
+            const nodeMatOrange = new THREE.MeshBasicMaterial({ color: 0xe2664f });
+            const nodeMatGreen = new THREE.MeshBasicMaterial({ color: 0x7fd88f });
+
+            for (let i = 0; i < NODE_COUNT; i++) {
+                const radius = 13 + Math.random() * 6;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos((Math.random() * 2) - 1);
+                const x = radius * Math.sin(phi) * Math.cos(theta);
+                const y = radius * Math.sin(phi) * Math.sin(theta);
+                const z = radius * Math.cos(phi);
+                const vec = new THREE.Vector3(x, y, z);
+                nodePositions.push(vec);
+                const mesh = new THREE.Mesh(nodeGeo, Math.random() > 0.82 ? nodeMatGreen : nodeMatOrange);
+                mesh.position.copy(vec);
+                nodes.add(mesh);
+            }
+            group.add(nodes);
+
+            /* connecting lines between nearby nodes */
+            const lineMat = new THREE.LineBasicMaterial({ color: 0x3a4740, transparent: true, opacity: 0.55 });
+            const lineGeo = new THREE.BufferGeometry();
+            const linePositions = [];
+            const MAX_DIST = 9.5;
+            for (let i = 0; i < nodePositions.length; i++) {
+                for (let j = i + 1; j < nodePositions.length; j++) {
+                    if (nodePositions[i].distanceTo(nodePositions[j]) < MAX_DIST) {
+                        linePositions.push(nodePositions[i].x, nodePositions[i].y, nodePositions[i].z);
+                        linePositions.push(nodePositions[j].x, nodePositions[j].y, nodePositions[j].z);
+                    }
+                }
+            }
+            lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+            const lines = new THREE.LineSegments(lineGeo, lineMat);
+            group.add(lines);
+
+            /* central wireframe icosahedron */
+            const icoGeo = new THREE.IcosahedronGeometry(7, 0);
+            const icoMat = new THREE.MeshBasicMaterial({ color: 0xe2664f, wireframe: true, transparent: true, opacity: 0.5 });
+            const ico = new THREE.Mesh(icoGeo, icoMat);
+            group.add(ico);
+
+            const icoGeo2 = new THREE.IcosahedronGeometry(4.4, 0);
+            const icoMat2 = new THREE.MeshBasicMaterial({ color: 0x7fd88f, wireframe: true, transparent: true, opacity: 0.35 });
+            const ico2 = new THREE.Mesh(icoGeo2, icoMat2);
+            group.add(ico2);
+
+            group.position.set(width > 860 ? 13 : 0, 1, 0);
+
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth - 0.5);
+                mouseY = (e.clientY / window.innerHeight - 0.5);
+            });
+
+            function onResize() {
+                width = heroSection.clientWidth;
+                height = heroSection.clientHeight;
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height);
+                group.position.x = width > 860 ? 13 : 0;
+            }
+            window.addEventListener('resize', onResize);
+
+            let t = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                t += 0.0028;
+                group.rotation.y = t + mouseX * 0.4;
+                group.rotation.x = Math.sin(t * 0.6) * 0.15 + mouseY * 0.25;
+                ico.rotation.y -= 0.0016;
+                ico.rotation.x += 0.001;
+                ico2.rotation.y += 0.0022;
+                ico2.rotation.x -= 0.0014;
+                renderer.render(scene, camera);
+            }
+            animate();
+        })();
+    </script>
+</body>
+
+</html>

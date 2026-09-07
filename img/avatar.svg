@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="120" cy="120" r="118"/>
+    </clipPath>
+  </defs>
+  <rect x="1" y="1" width="238" height="238" rx="119" fill="#E2624B"/>
+  <g clip-path="url(#circleClip)">
+    <rect width="240" height="240" fill="#E2624B"/>
+    <circle cx="60" cy="40" r="70" fill="#E8A33D" opacity="0.55"/>
+    <circle cx="200" cy="210" r="90" fill="#12201E" opacity="0.35"/>
+    <text x="120" y="150" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="88" font-weight="700" fill="#F1ECDE" text-anchor="middle">NK</text>
+  </g>
+  <circle cx="120" cy="120" r="118" fill="none" stroke="#F1ECDE" stroke-width="3"/>
+</svg>
