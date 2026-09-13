@@ -349,6 +349,36 @@ h2.title {
   color: var(--muted);
 }
 
+.social-row {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.social-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    border: 1px solid var(--border, #2a3a34);
+    border-radius: 6px;
+    color: var(--text-main, #eef1ee);
+    text-decoration: none;
+    transition: border-color .15s ease, transform .1s ease;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    border-color: var(--accent, #3a7bd5);
+    color: var(--accent, #3a7bd5);
+    transform: translateY(-1px);
+}
+
 /* ---------- Projects ---------- */
 .proj-layout {
   display: grid;
