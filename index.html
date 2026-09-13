@@ -203,9 +203,9 @@
             <div class="modal-cert-visual">
                 <div class="modal-close" id="certModalClose">✕</div>
                 <svg class="seal" viewBox="0 0 64 64" fill="none" id="modalSeal">
-                    <circle cx="32" cy="26" r="18" stroke="#e2664f" stroke-width="2.5" />
-                    <circle cx="32" cy="26" r="11" stroke="#f08a71" stroke-width="1.5" />
-                    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#e2664f" stroke-width="2.5"
+                    <circle cx="32" cy="26" r="18" stroke="#4da3ff" stroke-width="2.5" />
+                    <circle cx="32" cy="26" r="11" stroke="#8ecbff" stroke-width="1.5" />
+                    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#4da3ff" stroke-width="2.5"
                         stroke-linejoin="round" fill="none" />
                     <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -291,18 +291,18 @@
                 id: "JMOZ7890QRST",
                 category: "cybersecurity",
                 tag: "cybersecurity",
-                img: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0e3f1c5b-7d8e-4a2c-9f6e-1b2c3d4e5f6g.pdf",
-                link: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0e3f1c5b-7d8e-4a2c-9f6e-1b2c3d4e5f6g.pdf"
+                img: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf",
+                link: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf"
             },
             {
-                title: "Cybersecurity Essentials",
+                title: "Junior Cybersecurity Analyst Career Path",
                 issuer: "CISCO Networking Academy",
                 date: "Mei 2025",
                 id: "JMOZ7890QRST",
                 category: "cybersecurity",
                 tag: "cybersecurity",
-                img: "sertifikat/Junior-cybersecurity-analyst-cybersecurity-essentials-certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0e3f1c5b-7d8e-4a2c-9f6e-1b2c3d4e5f6g.pdf",
-                link: "sertifikat/Junior-cybersecurity-analyst-cybersecurity-essentials-certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0e3f1c5b-7d8e-4a2c-9f6e-1b2c3d4e5f6g.pdf"
+                img: "sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf",
+                link: "sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf"
             },
             {
                 title: "Belajar Dasar Sistem IoT dengan ESP32",
@@ -317,9 +317,9 @@
         ];
 
         const sealSVG = `<svg class="seal" viewBox="0 0 64 64" fill="none">
-  <circle cx="32" cy="26" r="18" stroke="#e2664f" stroke-width="2.5"/>
-  <circle cx="32" cy="26" r="11" stroke="#f08a71" stroke-width="1.5"/>
-  <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#e2664f" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+    <circle cx="32" cy="26" r="18" stroke="#4da3ff" stroke-width="2.5"/>
+    <circle cx="32" cy="26" r="11" stroke="#8ecbff" stroke-width="1.5"/>
+    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#4da3ff" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
   <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
@@ -441,8 +441,8 @@
             const nodePositions = [];
             const nodes = new THREE.Group();
             const nodeGeo = new THREE.SphereGeometry(0.14, 8, 8);
-            const nodeMatOrange = new THREE.MeshBasicMaterial({ color: 0xe2664f });
-            const nodeMatGreen = new THREE.MeshBasicMaterial({ color: 0x7fd88f });
+            const nodeMatBlue = new THREE.MeshBasicMaterial({ color: 0x4da3ff });
+            const nodeMatLightBlue = new THREE.MeshBasicMaterial({ color: 0x8ecbff });
 
             for (let i = 0; i < NODE_COUNT; i++) {
                 const radius = 13 + Math.random() * 6;
@@ -453,14 +453,14 @@
                 const z = radius * Math.cos(phi);
                 const vec = new THREE.Vector3(x, y, z);
                 nodePositions.push(vec);
-                const mesh = new THREE.Mesh(nodeGeo, Math.random() > 0.82 ? nodeMatGreen : nodeMatOrange);
+                const mesh = new THREE.Mesh(nodeGeo, Math.random() > 0.82 ? nodeMatLightBlue : nodeMatBlue);
                 mesh.position.copy(vec);
                 nodes.add(mesh);
             }
             group.add(nodes);
 
             /* connecting lines between nearby nodes */
-            const lineMat = new THREE.LineBasicMaterial({ color: 0x3a4740, transparent: true, opacity: 0.55 });
+            const lineMat = new THREE.LineBasicMaterial({ color: 0x2f5f85, transparent: true, opacity: 0.55 });
             const lineGeo = new THREE.BufferGeometry();
             const linePositions = [];
             const MAX_DIST = 9.5;
@@ -478,12 +478,12 @@
 
             /* central wireframe icosahedron */
             const icoGeo = new THREE.IcosahedronGeometry(7, 0);
-            const icoMat = new THREE.MeshBasicMaterial({ color: 0xe2664f, wireframe: true, transparent: true, opacity: 0.5 });
+            const icoMat = new THREE.MeshBasicMaterial({ color: 0x4da3ff, wireframe: true, transparent: true, opacity: 0.5 });
             const ico = new THREE.Mesh(icoGeo, icoMat);
             group.add(ico);
 
             const icoGeo2 = new THREE.IcosahedronGeometry(4.4, 0);
-            const icoMat2 = new THREE.MeshBasicMaterial({ color: 0x7fd88f, wireframe: true, transparent: true, opacity: 0.35 });
+            const icoMat2 = new THREE.MeshBasicMaterial({ color: 0x8ecbff, wireframe: true, transparent: true, opacity: 0.35 });
             const ico2 = new THREE.Mesh(icoGeo2, icoMat2);
             group.add(ico2);
 

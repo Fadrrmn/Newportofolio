@@ -8,8 +8,8 @@
   --ink: #eef0e9;
   --muted: #8fa196;
   --muted-2: #5c6b62;
-  --accent: #310b04;
-  --accent-2: #f08a71;
+  --accent: #1769aa;
+  --accent-2: #55a7ff;
   --green: #7fd88f;
   --line: rgba(238, 240, 233, 0.09);
   --line-strong: rgba(238, 240, 233, 0.16);
@@ -444,7 +444,7 @@ h2.title {
   border-radius: 50%;
   margin: 0 auto 18px;
   object-fit: cover;
-  background: radial-gradient(circle at 35% 30%, var(--accent-2), var(--accent) 60%, #1a0501 100%);
+  background: radial-gradient(circle at 35% 30%, var(--accent-2), var(--accent) 60%, #09243d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -557,7 +557,7 @@ h2.title {
   position: relative;
   aspect-ratio: 1.4/1;
   background:
-    radial-gradient(circle at 85% 12%, rgba(226, 102, 79, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 12%, rgba(85, 167, 255, 0.25), transparent 45%),
     repeating-linear-gradient(135deg, rgba(238, 240, 233, 0.035) 0px, rgba(238, 240, 233, 0.035) 2px, transparent 2px, transparent 14px),
     var(--surface-2);
   display: flex;
@@ -664,7 +664,7 @@ h2.title {
 .modal-cert-visual {
   aspect-ratio: 1.6/1;
   background:
-    radial-gradient(circle at 80% 10%, rgba(226, 102, 79, 0.3), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(85, 167, 255, 0.3), transparent 45%),
     repeating-linear-gradient(135deg, rgba(238, 240, 233, 0.04) 0px, rgba(238, 240, 233, 0.04) 2px, transparent 2px, transparent 14px),
     var(--surface-2);
   display: flex;
