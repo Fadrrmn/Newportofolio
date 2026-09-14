@@ -163,6 +163,100 @@ nav.wrap {
   gap: 24px;
 }
 
+/* ---------- Japanese kicker ---------- */
+.kicker-jp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kicker-jp .jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  color: var(--accent-2);
+  letter-spacing: .04em;
+}
+
+.kicker-jp .kicker-line {
+  width: 28px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.kicker-jp .romaji {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--muted-2);
+  font-weight: 600;
+}
+
+/* ---------- Sakura petal layer ---------- */
+.sakura-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sakura-layer .petal {
+  position: absolute;
+  top: -24px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-2);
+  opacity: .55;
+  border-radius: 60% 5% 60% 5%;
+  animation: petal-fall linear infinite;
+}
+
+.petal.p1 { left: 8%;  width: 10px; height: 10px; animation-duration: 12s; animation-delay: 0s; }
+.petal.p2 { left: 22%; width: 14px; height: 14px; animation-duration: 16s; animation-delay: 2s; background: var(--green); }
+.petal.p3 { left: 46%; width: 9px;  height: 9px;  animation-duration: 10s; animation-delay: 4s; }
+.petal.p4 { left: 63%; width: 13px; height: 13px; animation-duration: 15s; animation-delay: 1s; }
+.petal.p5 { left: 80%; width: 10px; height: 10px; animation-duration: 13s; animation-delay: 5s; background: var(--green); }
+.petal.p6 { left: 92%; width: 8px;  height: 8px;  animation-duration: 11s; animation-delay: 3s; }
+
+@keyframes petal-fall {
+  0%   { transform: translate(0, -6%) rotate(0deg);   opacity: 0; }
+  10%  { opacity: .55; }
+  90%  { opacity: .4; }
+  100% { transform: translate(24px, 106%) rotate(300deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-layer .petal { animation: none; display: none; }
+}
+
+/* ---------- Hero seal (hanko) ---------- */
+.hero-seal {
+  position: absolute;
+  bottom: 2%;
+  left: -6%;
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  border: 1.5px solid var(--accent-2);
+  background: rgba(85, 167, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-6deg);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent-2);
+  writing-mode: vertical-rl;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 860px) {
+  .hero-seal { left: 4%; bottom: 6%; }
+}
+
 .eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;

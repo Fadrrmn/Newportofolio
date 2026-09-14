@@ -7,7 +7,7 @@
     <title>Fadhlurrahman Naufal — Front-End Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,8 +30,23 @@
 
     <section class="hero" id="beranda">
         <canvas id="hero-canvas"></canvas>
+
+        <div class="sakura-layer" aria-hidden="true">
+            <span class="petal p1"></span>
+            <span class="petal p2"></span>
+            <span class="petal p3"></span>
+            <span class="petal p4"></span>
+            <span class="petal p5"></span>
+            <span class="petal p6"></span>
+        </div>
+
         <div class="wrap hero-grid">
             <div>
+                <div class="kicker-jp">
+                    <span class="jp">一期一会</span>
+                    <span class="kicker-line"></span>
+                    <span class="romaji">ICHI-GO ICHI-E</span>
+                </div>
                 <div class="eyebrow">whoami</div>
                 <h1 class="name">Fadhlurrahman<br>Naufal </h1>
                 <div class="role">Mahasiswa IT </div>
@@ -47,6 +62,7 @@
             </div>
 
             <div class="hero-character">
+                <span class="hero-seal" aria-hidden="true">紙</span>
                 <img class="char-body" src="img/character-transparent.png" alt="Ilustrasi karakter Fadhlurrahman Naufal">
             </div>
 
