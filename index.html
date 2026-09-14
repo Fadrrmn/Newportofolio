@@ -46,6 +46,10 @@
                 </div>
             </div>
 
+            <div class="hero-character">
+                <img class="char-body" src="img/character-transparent.png" alt="Ilustrasi karakter Fadhlurrahman Naufal">
+            </div>
+
         </div>
     </section>
 
@@ -452,7 +456,56 @@
         }
         attachTilt('[data-tilt]', 8);
 
-        /* ============ THREE.JS HERO NETWORK ============ */
+        /* Remove only edge-connected white pixels, preserving white details inside the character. */
+        (function () {
+            const character = document.querySelector('.char-body');
+            if (!character) return;
+
+            character.addEventListener('load', () => {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d', { willReadFrequently: true });
+                canvas.width = character.naturalWidth;
+                canvas.height = character.naturalHeight;
+                context.drawImage(character, 0, 0);
+
+                const image = context.getImageData(0, 0, canvas.width, canvas.height);
+                const pixels = image.data;
+                const visited = new Uint8Array(canvas.width * canvas.height);
+                const queue = [];
+                const isBackground = (index) => {
+                    const red = pixels[index];
+                    const green = pixels[index + 1];
+                    const blue = pixels[index + 2];
+                    return red > 238 && green > 238 && blue > 238;
+                };
+
+                for (let x = 0; x < canvas.width; x++) {
+                    queue.push([x, 0], [x, canvas.height - 1]);
+                }
+                for (let y = 1; y < canvas.height - 1; y++) {
+                    queue.push([0, y], [canvas.width - 1, y]);
+                }
+
+                while (queue.length) {
+                    const [x, y] = queue.pop();
+                    if (x < 0 || y < 0 || x >= canvas.width || y >= canvas.height) continue;
+                    const position = y * canvas.width + x;
+                    if (visited[position]) continue;
+                    visited[position] = 1;
+                    const pixelIndex = position * 4;
+                    if (!isBackground(pixelIndex)) continue;
+                    pixels[pixelIndex + 3] = 0;
+                    queue.push([x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]);
+                }
+
+                context.putImageData(image, 0, 0);
+                character.src = canvas.toDataURL('image/png');
+            }, { once: true });
+
+            if (character.complete) character.dispatchEvent(new Event('load'));
+        })();
+
+        /* ============ THREE.JS HERO SCENE ============ */
         (function () {
             const canvas = document.getElementById('hero-canvas');
             const heroSection = document.querySelector('.hero');
@@ -460,8 +513,8 @@
             let height = heroSection.clientHeight;
 
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
-            camera.position.set(0, 0, 34);
+            const camera = new THREE.PerspectiveCamera(52, width / height, 0.1, 1000);
+            camera.position.set(0, 0, 30);
 
             const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
             renderer.setSize(width, height);
@@ -470,13 +523,45 @@
             const group = new THREE.Group();
             scene.add(group);
 
+            const blue = 0x4da3ff;
+            const paleBlue = 0x9bd5ff;
+
+            /* Soft depth layers keep the scene atmospheric without blocking the text. */
+            const halo = new THREE.Mesh(
+                new THREE.CircleGeometry(10, 64),
+                new THREE.MeshBasicMaterial({ color: 0x123451, transparent: true, opacity: 0.2 })
+            );
+            halo.position.z = -9;
+            group.add(halo);
+
+            const stars = new THREE.Group();
+            const starGeometry = new THREE.BufferGeometry();
+            const starPositions = [];
+            for (let i = 0; i < 180; i++) {
+                starPositions.push(
+                    (Math.random() - 0.5) * 44,
+                    (Math.random() - 0.5) * 28,
+                    (Math.random() - 0.5) * 18
+                );
+            }
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
+            stars.add(new THREE.Points(starGeometry, new THREE.PointsMaterial({
+                color: paleBlue,
+                size: 0.08,
+                transparent: true,
+                opacity: 0.65,
+                sizeAttenuation: true
+            })));
+            stars.position.z = -3;
+            group.add(stars);
+
             /* Node network (particles + connecting lines) */
-            const NODE_COUNT = 70;
+            const NODE_COUNT = 82;
             const nodePositions = [];
             const nodes = new THREE.Group();
-            const nodeGeo = new THREE.SphereGeometry(0.14, 8, 8);
-            const nodeMatBlue = new THREE.MeshBasicMaterial({ color: 0x4da3ff });
-            const nodeMatLightBlue = new THREE.MeshBasicMaterial({ color: 0x8ecbff });
+            const nodeGeo = new THREE.SphereGeometry(0.11, 8, 8);
+            const nodeMatBlue = new THREE.MeshBasicMaterial({ color: blue });
+            const nodeMatLightBlue = new THREE.MeshBasicMaterial({ color: paleBlue });
 
             for (let i = 0; i < NODE_COUNT; i++) {
                 const radius = 13 + Math.random() * 6;
@@ -510,23 +595,39 @@
             const lines = new THREE.LineSegments(lineGeo, lineMat);
             group.add(lines);
 
-            /* central wireframe icosahedron */
-            const icoGeo = new THREE.IcosahedronGeometry(7, 0);
-            const icoMat = new THREE.MeshBasicMaterial({ color: 0x4da3ff, wireframe: true, transparent: true, opacity: 0.5 });
+            /* Layered wireframes create a slowly rotating 3D core. */
+            const icoGeo = new THREE.IcosahedronGeometry(7, 1);
+            const icoMat = new THREE.MeshBasicMaterial({ color: blue, wireframe: true, transparent: true, opacity: 0.26 });
             const ico = new THREE.Mesh(icoGeo, icoMat);
             group.add(ico);
 
-            const icoGeo2 = new THREE.IcosahedronGeometry(4.4, 0);
-            const icoMat2 = new THREE.MeshBasicMaterial({ color: 0x8ecbff, wireframe: true, transparent: true, opacity: 0.35 });
+            const icoGeo2 = new THREE.IcosahedronGeometry(4.4, 1);
+            const icoMat2 = new THREE.MeshBasicMaterial({ color: paleBlue, wireframe: true, transparent: true, opacity: 0.42 });
             const ico2 = new THREE.Mesh(icoGeo2, icoMat2);
             group.add(ico2);
+
+            const orbitGroup = new THREE.Group();
+            [7.8, 9.2, 10.6].forEach((radius, index) => {
+                const orbit = new THREE.Mesh(
+                    new THREE.TorusGeometry(radius, index === 1 ? 0.035 : 0.055, 8, 96),
+                    new THREE.MeshBasicMaterial({
+                        color: index === 1 ? paleBlue : blue,
+                        transparent: true,
+                        opacity: index === 1 ? 0.5 : 0.28
+                    })
+                );
+                orbit.rotation.set(index * 0.55, index * 0.7, index * 0.35);
+                orbitGroup.add(orbit);
+            });
+            group.add(orbitGroup);
 
             group.position.set(width > 860 ? 13 : 0, 1, 0);
 
             let mouseX = 0, mouseY = 0;
+            let targetX = 0, targetY = 0;
             window.addEventListener('mousemove', (e) => {
-                mouseX = (e.clientX / window.innerWidth - 0.5);
-                mouseY = (e.clientY / window.innerHeight - 0.5);
+                targetX = (e.clientX / window.innerWidth - 0.5);
+                targetY = (e.clientY / window.innerHeight - 0.5);
             });
 
             function onResize() {
@@ -542,13 +643,21 @@
             let t = 0;
             function animate() {
                 requestAnimationFrame(animate);
-                t += 0.0028;
-                group.rotation.y = t + mouseX * 0.4;
-                group.rotation.x = Math.sin(t * 0.6) * 0.15 + mouseY * 0.25;
-                ico.rotation.y -= 0.0016;
-                ico.rotation.x += 0.001;
+                t += 0.0032;
+                mouseX += (targetX - mouseX) * 0.035;
+                mouseY += (targetY - mouseY) * 0.035;
+                group.rotation.y = t * 0.55 + mouseX * 0.32;
+                group.rotation.x = Math.sin(t * 0.7) * 0.08 + mouseY * 0.18;
+                stars.rotation.y = -t * 0.08;
+                nodes.rotation.y = -t * 0.16;
+                lines.rotation.y = -t * 0.16;
+                ico.rotation.y -= 0.0014;
+                ico.rotation.x += 0.0008;
                 ico2.rotation.y += 0.0022;
                 ico2.rotation.x -= 0.0014;
+                orbitGroup.rotation.z = t * 0.2;
+                orbitGroup.rotation.y = -t * 0.15;
+                halo.scale.setScalar(1 + Math.sin(t * 2) * 0.025);
                 renderer.render(scene, camera);
             }
             animate();
