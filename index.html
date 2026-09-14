@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadhlurrahman Naufal — Front-End Developer</title>
+    <title>Fadhlurrahman Naufal | My Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
@@ -12,16 +12,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="intro-active">
+
+    <div class="site-intro" aria-hidden="true">
+        <div class="intro-kicker">MY PORTFOLIO <span>2026</span></div>
+        <div class="intro-name">FADHLURRAHMAN<br>NAUFAL</div>
+        <div class="intro-line"><span></span></div>
+        <div class="intro-status">INITIALIZING EXPERIENCE...</div>
+    </div>
 
     <header>
         <nav class="wrap">
-            <div class="brand">Fadhlurrahman Naufal<span class="cursor"></span></div>
+            <div class="brand">My Portfolio<span class="cursor"></span></div>
             <div class="navlinks">
                 <a href="#beranda">Beranda</a>
                 <a href="#tentang">Tentang</a>
                 <a href="#proyek">Proyek</a>
                 <a href="#sertifikat">Sertifikat</a>
+                <a href="#komentar">Komentar</a>
                 <a class="cta" href="https://www.dicoding.com/users/fadhlurrahman_6b7z/academies" target="_blank"
                     rel="noopener">Profil Dicoding ↗</a>
             </div>
@@ -51,9 +59,18 @@
                 <h1 class="name">Fadhlurrahman<br>Naufal </h1>
                 <div class="role">Mahasiswa IT </div>
                 <p class="lede">
-                    Saya sedang belajar membangun website dengan HTML, CSS, dan JavaScript.
-                    Halaman ini adalah submission tugas akhir kelas "Membuat Website" di Dicoding —
-                    kini dilengkapi visual 3D dan galeri sertifikat.
+                    Website ini merupakan bagian dari perjalanan saya dalam mempelajari dan mengembangkan kemampuan di
+                    bidang web development. Dibangun menggunakan HTML, CSS, dan JavaScript, website ini menjadi ruang
+                    untuk memperkenalkan diri, menampilkan berbagai proyek, pengalaman, serta sertifikat yang telah saya
+                    peroleh.
+
+                    Dengan memadukan desain modern, visual 3D, animasi, dan galeri sertifikat, saya berusaha menciptakan
+                    pengalaman yang interaktif sekaligus merepresentasikan proses belajar dan perkembangan kemampuan
+                    saya di dunia teknologi.
+
+                    Website ini bukan sekadar tempat untuk menampilkan karya, tetapi juga menjadi gambaran dari
+                    perjalanan saya untuk terus belajar, berkembang, dan menciptakan sesuatu yang lebih baik.
+
                 </p>
                 <div class="btnrow">
                     <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
@@ -62,20 +79,41 @@
             </div>
 
             <div class="hero-character">
+                <div class="welcome-ring" aria-hidden="true">
+                    <span class="ring-orbit ring-orbit-outer"></span>
+                    <span class="ring-orbit ring-orbit-inner"></span>
+                    <span class="ring-dot ring-dot-1"></span>
+                    <span class="ring-dot ring-dot-2"></span>
+                    <svg class="ring-lettering" viewBox="0 0 520 520" role="presentation">
+                        <defs>
+                            <path id="welcome-ring-path"
+                                d="M 260,260 m -190,0 a 190,190 0 1,1 380,0 a 190,190 0 1,1 -380,0" />
+                        </defs>
+                        <text>
+                            <textPath href="#welcome-ring-path" startOffset="0%">ようこそ · ようこそ · ようこそ · ようこそ · </textPath>
+                        </text>
+                    </svg>
+                </div>
                 <span class="hero-seal" aria-hidden="true">紙</span>
-                <img class="char-body" src="img/character-transparent.png" alt="Ilustrasi karakter Fadhlurrahman Naufal">
+                <img class="char-body" src="img/character-transparent.png"
+                    alt="Ilustrasi karakter Fadhlurrahman Naufal">
             </div>
 
         </div>
     </section>
 
     <section id="tentang">
+        <div class="about-starfield" aria-hidden="true"></div>
         <div class="wrap">
             <div class="section-head">
                 <div class="index">01<span class="sep">—</span>Tentang</div>
                 <h2 class="title">Tentang Saya</h2>
             </div>
             <div class="about-body">
+                <div class="about-name-backdrop" aria-hidden="true">
+                    <span>FADHLURRAHMAN</span>
+                    <span>NAUFAL</span>
+                </div>
                 <div class="about-text">
                     <p>
                         Halo! Saya Fadhlurrahman Naufal Nugraha, mahasiswa Teknologi Rekayasa Komputer di
@@ -85,14 +123,7 @@
                         mengembangkan sistem IoT menggunakan ESP32, hingga melakukan konfigurasi dan simulasi
                         jaringan komputer.
                     </p>
-                    <p>
-                        Saya adalah seseorang yang senang mencoba hal baru, belajar melalui praktik, dan
-                        memecahkan masalah secara bertahap. Saya menyadari bahwa masih banyak hal yang perlu
-                        saya pelajari, sehingga saya terus berusaha meningkatkan kemampuan teknis maupun
-                        kemampuan bekerja dalam tim. Tujuan saya adalah terus berkembang sebagai seorang IT
-                        enthusiast dan membangun pengalaman melalui berbagai project yang dapat memberikan
-                        manfaat serta menjadi bagian dari perjalanan karier saya di bidang teknologi.
-                    </p>
+                    
                     <div class="skill-title">// skill</div>
                     <div class="chips">
                         <span class="chip">HTML</span>
@@ -105,9 +136,14 @@
                         <span class="chip">KOTLIN</span>
                         <span class="chip">MySQL</span>
                         <span class="chip">JavaScript</span>
+                        <span class="chip">Python</span>
                         <span class="chip">Git &amp; GitHub</span>
                         <span class="chip">Responsive Design</span>
                     </div>
+                </div>
+                <div class="about-photo-wrap">
+                    <div class="about-photo-glow" aria-hidden="true"></div>
+                    <img class="about-photo" src="img/Naufal-removebg-preview.png" alt="Foto Fadhlurrahman Naufal">
                 </div>
                 <div>
                     <div class="stat-card">
@@ -121,6 +157,40 @@
                     <div class="stat-card">
                         <div class="stat-num">6+</div>
                         <div class="stat-label">Sertifikat kelas Dicoding</div>
+                    </div>
+                </div>
+                <div class="skill-journey">
+                    <div class="journey-heading">
+                        <span class="skill-title">// perjalanan menuju DevOps</span>
+                        <span class="journey-status">LEARNING_MODE: ON</span>
+                    </div>
+                    <div class="journey-track">
+                        <div class="journey-line"><span class="journey-pulse"></span></div>
+                        <div class="journey-step active">
+                            <span class="skill-logo logo-linux">$_</span>
+                            <strong>Linux</strong>
+                            <small>Fondasi sistem</small>
+                        </div>
+                        <div class="journey-step">
+                            <span class="skill-logo logo-network">NW</span>
+                            <strong>Networking</strong>
+                            <small>Koneksi</small>
+                        </div>
+                        <div class="journey-step">
+                            <span class="skill-logo logo-cloud">CL</span>
+                            <strong>Cloud</strong>
+                            <small>Infrastruktur</small>
+                        </div>
+                        <div class="journey-step">
+                            <span class="skill-logo logo-cicd">CI</span>
+                            <strong>CI/CD</strong>
+                            <small>Otomasi</small>
+                        </div>
+                        <div class="journey-step">
+                            <span class="skill-logo logo-devops">DO</span>
+                            <strong>DevOps</strong>
+                            <small>Tujuan belajar</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,7 +249,7 @@
                 <div class="profile-card">
                     <img class="avatar" src="img/foto.png" alt="Fadhlurrahman Naufal">
                     <h3>Fadhlurrahman Naufal Nugraha</h3>
-                    <div class="profile-role">Front-End Developer</div>
+                    <div class="profile-role">Calon DevOps Engineer</div>
                     <div class="meta-row"><span class="k">LOKASI</span><span class="v">Kota Pekanbaru, Indonesia</span>
                     </div>
                     <div class="meta-row"><span class="k">STATUS</span><span class="v">Mahasiswa</span></div>
@@ -242,6 +312,36 @@
                 <button class="filter-btn" data-filter="network">Network &amp; IoT</button>
             </div>
             <div class="cert-grid" id="certGrid"></div>
+        </div>
+    </section>
+
+    <section id="komentar">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="index">04<span class="sep">—</span>Komentar</div>
+                <h2 class="title">Tinggalkan Komentar</h2>
+            </div>
+            <div class="comment-layout">
+                <form class="comment-form" id="commentForm">
+                    <label for="commentName">Nama</label>
+                    <input id="commentName" name="name" type="text" maxlength="40" placeholder="Nama kamu" required>
+                    <label for="commentMessage">Komentar</label>
+                    <textarea id="commentMessage" name="message" rows="5" maxlength="240"
+                        placeholder="Tulis pesan atau masukan..." required></textarea>
+                    <div class="comment-form-footer">
+                        <span class="character-count" id="characterCount">0/240</span>
+                        <button class="btn btn-primary" type="submit">Kirim Komentar</button>
+                    </div>
+                    <p class="comment-status" id="commentStatus" role="status" aria-live="polite"></p>
+                </form>
+                <div class="comment-list-wrap">
+                    <div class="comment-list-head">
+                        <span class="skill-title">// komentar pengunjung</span>
+                        <span class="comment-total" id="commentTotal">0 komentar</span>
+                    </div>
+                    <div class="comment-list" id="commentList" aria-live="polite"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -457,6 +557,154 @@
         document.getElementById('certModalClose').addEventListener('click', () => modal.classList.remove('open'));
         modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+        /* ---------- Local comments ---------- */
+        const commentForm = document.getElementById('commentForm');
+        const commentName = document.getElementById('commentName');
+        const commentMessage = document.getElementById('commentMessage');
+        const commentList = document.getElementById('commentList');
+        const commentTotal = document.getElementById('commentTotal');
+        const commentStatus = document.getElementById('commentStatus');
+        const characterCount = document.getElementById('characterCount');
+        const commentStorageKey = 'fadhlurrahman-portfolio-comments';
+
+        function getComments() {
+            try {
+                return JSON.parse(localStorage.getItem(commentStorageKey)) || [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function renderComments() {
+            const comments = getComments();
+            commentList.innerHTML = '';
+            commentTotal.textContent = `${comments.length} komentar`;
+
+            if (!comments.length) {
+                commentList.innerHTML = '<div class="comment-empty">Belum ada komentar. Jadilah yang pertama.</div>';
+                return;
+            }
+
+            comments.forEach((comment) => {
+                const item = document.createElement('article');
+                item.className = 'comment-item';
+
+                const header = document.createElement('div');
+                header.className = 'comment-item-head';
+                const name = document.createElement('strong');
+                name.textContent = comment.name;
+                const date = document.createElement('time');
+                date.textContent = new Date(comment.createdAt).toLocaleDateString('id-ID', {
+                    day: 'numeric', month: 'short', year: 'numeric'
+                });
+                header.append(name, date);
+
+                const message = document.createElement('p');
+                message.textContent = comment.message;
+                const removeButton = document.createElement('button');
+                removeButton.className = 'comment-delete';
+                removeButton.type = 'button';
+                removeButton.textContent = 'Hapus';
+                removeButton.addEventListener('click', () => {
+                    localStorage.setItem(commentStorageKey, JSON.stringify(getComments().filter(item => item.id !== comment.id)));
+                    renderComments();
+                });
+
+                item.append(header, message, removeButton);
+                commentList.appendChild(item);
+            });
+        }
+
+        commentMessage.addEventListener('input', () => {
+            characterCount.textContent = `${commentMessage.value.length}/240`;
+        });
+
+        commentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = commentName.value.trim();
+            const message = commentMessage.value.trim();
+            if (!name || !message) return;
+
+            const comments = getComments();
+            comments.unshift({ id: Date.now(), name, message, createdAt: new Date().toISOString() });
+            localStorage.setItem(commentStorageKey, JSON.stringify(comments));
+            commentForm.reset();
+            characterCount.textContent = '0/240';
+            commentStatus.textContent = 'Komentar berhasil ditambahkan.';
+            renderComments();
+        });
+
+        renderComments();
+
+        /* ---------- Section transitions ---------- */
+        document.body.classList.add('js-reveal');
+        const sections = document.querySelectorAll('section:not(.hero)');
+        function showSection(section) {
+            section.classList.add('section-visible');
+        }
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                showSection(entry.target);
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.12 });
+
+        sections.forEach((section) => sectionObserver.observe(section));
+
+        function revealVisibleSections() {
+            sections.forEach((section) => {
+                const bounds = section.getBoundingClientRect();
+                if (bounds.top < window.innerHeight * .88 && bounds.bottom > 0) {
+                    showSection(section);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealVisibleSections, { passive: true });
+        revealVisibleSections();
+
+        /* ---------- Falling stars for the About section ---------- */
+        const starfield = document.querySelector('.about-starfield');
+        for (let index = 0; index < 34; index += 1) {
+            const star = document.createElement('span');
+            star.className = 'falling-star';
+            star.style.setProperty('--star-x', `${Math.random() * 100}%`);
+            star.style.setProperty('--star-delay', `${Math.random() * 8}s`);
+            star.style.setProperty('--star-duration', `${5 + Math.random() * 7}s`);
+            star.style.setProperty('--star-size', `${1 + Math.random() * 2.5}px`);
+            starfield.appendChild(star);
+        }
+
+        /* ---------- Opening transition ---------- */
+        window.addEventListener('load', () => {
+            window.setTimeout(() => {
+                document.body.classList.add('intro-closing');
+                window.setTimeout(() => {
+                    const intro = document.querySelector('.site-intro');
+                    intro.style.opacity = '0';
+                    intro.style.visibility = 'hidden';
+                }, 850);
+            }, 1200);
+        }, { once: true });
+
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const targetId = link.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (!target) return;
+
+                event.preventDefault();
+                document.body.classList.remove('page-transitioning');
+                void document.body.offsetWidth;
+                document.body.classList.add('page-transitioning');
+                history.pushState(null, '', `#${targetId}`);
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.setTimeout(() => document.body.classList.remove('page-transitioning'), 750);
+            });
+        });
 
         /* ---------- 3D tilt effect for cards ---------- */
         function attachTilt(selector, strength = 8) {
