@@ -18,10 +18,21 @@
     <canvas id="katakana-canvas" aria-hidden="true"></canvas>
 
     <div class="site-intro" aria-hidden="true">
-        <div class="intro-kicker">MY PORTFOLIO <span>2026</span></div>
-        <div class="intro-name">FADHLURRAHMAN<br>NAUFAL</div>
-        <div class="intro-line"><span></span></div>
-        <div class="intro-status">INITIALIZING EXPERIENCE...</div>
+        <div class="intro-topline">
+            <span><i></i> TOKYO NIGHT // PORTFOLIO</span>
+            <span>東京 <b>26</b></span>
+        </div>
+        <div class="intro-center">
+            <div class="intro-kicker"><span>CYBER DISTRICT</span><span>// 2026</span></div>
+            <div class="intro-name"><span>FADHLURRAHMAN</span><span>NAUFAL</span></div>
+            <div class="intro-role"><span>SHINJUKU AFTER DARK</span><i></i><span>CREATIVE CODE</span></div>
+        </div>
+        <div class="intro-bottom">
+            <div class="intro-status"><span><i></i> CONNECTING TO TOKYO GRID</span><span>ようこそ</span></div>
+            <div class="intro-line"><span></span></div>
+            <div class="intro-progress"><span>NEON DISTRICT 01 / 03</span><span>電脳</span></div>
+        </div>
+        <div class="intro-index" aria-hidden="true">一期一会</div>
     </div>
 
     <header>
@@ -57,13 +68,11 @@
                 </div>
             </div>
 
-            <div class="hero-stage" id="heroStage" role="img" aria-label="Ilustrasi karakter anime dalam panggung animasi 3D">
-                <div class="hero-stage-orbit hero-stage-orbit-one" aria-hidden="true"></div>
-                <div class="hero-stage-orbit hero-stage-orbit-two" aria-hidden="true"></div>
+            <div class="hero-stage" id="heroStage" role="img" aria-label="Ilustrasi karakter anime di bawah langit senja Jepang">
                 <div class="hero-art-layer" id="heroArtLayer">
                     <img class="hero-character" src="img/character-transparent.png" alt="Ilustrasi karakter anime">
                 </div>
-                <div class="hero-stage-caption"><span>CHARACTER / 3D MOTION</span></div>
+                <div class="hero-stage-caption"><span>東京 · TOKYO</span><span>SHINJUKU / 35°41′N</span></div>
             </div>
         </div>
     </section>
@@ -649,7 +658,11 @@
             function resize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                drops = Array(Math.ceil(canvas.width / 20)).fill(1);
+                drops = Array.from({ length: Math.ceil(canvas.width / 24) }, () => ({
+                    y: Math.random() * canvas.height / 18,
+                    speed: .3 + Math.random() * .8,
+                    opacity: .16 + Math.random() * .26
+                }));
             }
 
             function draw(timestamp) {
@@ -657,23 +670,21 @@
                 if (document.hidden || timestamp - lastFrame < 45) return;
                 lastFrame = timestamp;
 
-                context.fillStyle = 'rgba(3, 1, 10, 0.12)';
+                context.fillStyle = 'rgba(17, 18, 27, 0.12)';
                 context.fillRect(0, 0, canvas.width, canvas.height);
-                context.font = '14px "Share Tech Mono", monospace';
+                context.font = '13px "Noto Sans JP", sans-serif';
 
                 drops.forEach((drop, index) => {
-                    const brightness = Math.random();
-                    context.shadowBlur = brightness > 0.98 ? 7 : 0;
-                    context.shadowColor = '#00f5ff';
-                    context.fillStyle = brightness > 0.98
-                        ? '#e0e8ff'
-                        : brightness > 0.9
-                            ? '#00f5ff'
-                            : `rgba(0, 245, 255, ${0.08 + brightness * 0.2})`;
-                    context.fillText(characters[Math.floor(Math.random() * characters.length)], index * 20, drop * 20);
+                    const highlight = Math.random() > .985;
+                    context.fillStyle = highlight
+                        ? `rgba(242, 118, 141, ${drop.opacity + .2})`
+                        : `rgba(166, 217, 202, ${drop.opacity})`;
+                    context.shadowColor = highlight ? '#f2768d' : '#a6d9ca';
+                    context.shadowBlur = highlight ? 9 : 4;
+                    context.fillText(characters[Math.floor(Math.random() * characters.length)], index * 24, drop.y * 18);
 
-                    if (drop * 20 > canvas.height && Math.random() > 0.98) drops[index] = 0;
-                    drops[index] += 1;
+                    if (drop.y * 18 > canvas.height && Math.random() > .975) drop.y = 0;
+                    drop.y += drop.speed;
                 });
             }
 
@@ -844,13 +855,15 @@
             const group = new THREE.Group();
             scene.add(group);
 
-            const blue = 0x4da3ff;
-            const paleBlue = 0x9bd5ff;
+            const sakuraPink = 0xf28ca3;
+            const petalCream = 0xffd9c7;
+            const toriiRed = 0xb84d5b;
+            const inkPurple = 0x30223b;
 
-            /* Soft depth layers keep the scene atmospheric without blocking the text. */
+            /* A quiet depth plane keeps the landscape scene atmospheric. */
             const halo = new THREE.Mesh(
-                new THREE.CircleGeometry(10, 64),
-                new THREE.MeshBasicMaterial({ color: 0x123451, transparent: true, opacity: 0.2 })
+                new THREE.PlaneGeometry(42, 28),
+                new THREE.MeshBasicMaterial({ color: 0x493143, transparent: true, opacity: 0.14 })
             );
             halo.position.z = -9;
             group.add(halo);
@@ -867,80 +880,62 @@
             }
             starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
             stars.add(new THREE.Points(starGeometry, new THREE.PointsMaterial({
-                color: paleBlue,
-                size: 0.08,
+                color: petalCream,
+                size: 0.075,
                 transparent: true,
-                opacity: 0.65,
+                opacity: 0.72,
                 sizeAttenuation: true
             })));
             stars.position.z = -3;
             group.add(stars);
 
-            /* Node network (particles + connecting lines) */
-            const NODE_COUNT = 82;
-            const nodePositions = [];
-            const nodes = new THREE.Group();
-            const nodeGeo = new THREE.SphereGeometry(0.11, 8, 8);
-            const nodeMatBlue = new THREE.MeshBasicMaterial({ color: blue });
-            const nodeMatLightBlue = new THREE.MeshBasicMaterial({ color: paleBlue });
+            const torii = new THREE.Group();
+            const toriiMaterial = new THREE.MeshBasicMaterial({ color: toriiRed });
+            const toriiShadowMaterial = new THREE.MeshBasicMaterial({ color: inkPurple });
+            const postGeometry = new THREE.BoxGeometry(0.32, 5.8, 0.42);
+            const topBeamGeometry = new THREE.BoxGeometry(8.2, 0.42, 0.72);
+            const lowerBeamGeometry = new THREE.BoxGeometry(6.6, 0.24, 0.5);
+            const postLeft = new THREE.Mesh(postGeometry, toriiMaterial);
+            const postRight = new THREE.Mesh(postGeometry, toriiMaterial);
+            postLeft.position.set(-3.1, -1.1, 0);
+            postRight.position.set(3.1, -1.1, 0);
+            const topBeam = new THREE.Mesh(topBeamGeometry, toriiMaterial);
+            topBeam.position.set(0, 2.05, 0);
+            const roofBeam = new THREE.Mesh(new THREE.BoxGeometry(8.8, 0.2, 0.9), toriiShadowMaterial);
+            roofBeam.position.set(0, 2.36, 0);
+            const lowerBeam = new THREE.Mesh(lowerBeamGeometry, toriiMaterial);
+            lowerBeam.position.set(0, 1.05, 0);
+            torii.add(postLeft, postRight, topBeam, roofBeam, lowerBeam);
+            torii.position.set(0, -2.1, -5.5);
+            group.add(torii);
 
-            for (let i = 0; i < NODE_COUNT; i++) {
-                const radius = 13 + Math.random() * 6;
-                const theta = Math.random() * Math.PI * 2;
-                const phi = Math.acos((Math.random() * 2) - 1);
-                const x = radius * Math.sin(phi) * Math.cos(theta);
-                const y = radius * Math.sin(phi) * Math.sin(theta);
-                const z = radius * Math.cos(phi);
-                const vec = new THREE.Vector3(x, y, z);
-                nodePositions.push(vec);
-                const mesh = new THREE.Mesh(nodeGeo, Math.random() > 0.82 ? nodeMatLightBlue : nodeMatBlue);
-                mesh.position.copy(vec);
-                nodes.add(mesh);
+            const petalShape = new THREE.Shape();
+            petalShape.moveTo(0, 0);
+            petalShape.bezierCurveTo(-0.13, 0.12, -0.13, 0.29, 0, 0.34);
+            petalShape.bezierCurveTo(0.13, 0.29, 0.13, 0.12, 0, 0);
+            const petalGeometry = new THREE.ShapeGeometry(petalShape, 8);
+            const petalMaterials = [sakuraPink, petalCream, 0xd87891].map((color) => new THREE.MeshBasicMaterial({
+                color,
+                side: THREE.DoubleSide,
+                transparent: true,
+                opacity: 0.86,
+                depthWrite: false
+            }));
+            const petals = [];
+
+            for (let index = 0; index < 34; index += 1) {
+                const petal = new THREE.Mesh(petalGeometry, petalMaterials[index % petalMaterials.length]);
+                petal.position.set((Math.random() - 0.5) * 34, (Math.random() - 0.5) * 22, (Math.random() - 0.5) * 12);
+                petal.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+                petal.userData = {
+                    fallSpeed: 0.012 + Math.random() * 0.018,
+                    sway: 0.006 + Math.random() * 0.01,
+                    phase: Math.random() * Math.PI * 2,
+                    spin: (Math.random() - 0.5) * 0.018
+                };
+                petals.push(petal);
+                group.add(petal);
             }
-            group.add(nodes);
-
-            /* connecting lines between nearby nodes */
-            const lineMat = new THREE.LineBasicMaterial({ color: 0x2f5f85, transparent: true, opacity: 0.55 });
-            const lineGeo = new THREE.BufferGeometry();
-            const linePositions = [];
-            const MAX_DIST = 9.5;
-            for (let i = 0; i < nodePositions.length; i++) {
-                for (let j = i + 1; j < nodePositions.length; j++) {
-                    if (nodePositions[i].distanceTo(nodePositions[j]) < MAX_DIST) {
-                        linePositions.push(nodePositions[i].x, nodePositions[i].y, nodePositions[i].z);
-                        linePositions.push(nodePositions[j].x, nodePositions[j].y, nodePositions[j].z);
-                    }
-                }
-            }
-            lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-            const lines = new THREE.LineSegments(lineGeo, lineMat);
-            group.add(lines);
-
-            /* Layered wireframes create a slowly rotating 3D core. */
-            const icoGeo = new THREE.IcosahedronGeometry(7, 1);
-            const icoMat = new THREE.MeshBasicMaterial({ color: blue, wireframe: true, transparent: true, opacity: 0.26 });
-            const ico = new THREE.Mesh(icoGeo, icoMat);
-            group.add(ico);
-
-            const icoGeo2 = new THREE.IcosahedronGeometry(4.4, 1);
-            const icoMat2 = new THREE.MeshBasicMaterial({ color: paleBlue, wireframe: true, transparent: true, opacity: 0.42 });
-            const ico2 = new THREE.Mesh(icoGeo2, icoMat2);
-            group.add(ico2);
-
-            const orbitGroup = new THREE.Group();
-            [7.8, 9.2, 10.6].forEach((radius, index) => {
-                const orbit = new THREE.Mesh(
-                    new THREE.TorusGeometry(radius, index === 1 ? 0.035 : 0.055, 8, 96),
-                    new THREE.MeshBasicMaterial({
-                        color: index === 1 ? paleBlue : blue,
-                        transparent: true,
-                        opacity: index === 1 ? 0.5 : 0.28
-                    })
-                );
-                orbit.rotation.set(index * 0.55, index * 0.7, index * 0.35);
-                orbitGroup.add(orbit);
-            });
-            group.add(orbitGroup);
 
             group.position.set(width > 860 ? 13 : 0, 1, 0);
 
@@ -973,18 +968,20 @@
                 t += 0.0032;
                 mouseX += (targetX - mouseX) * 0.035;
                 mouseY += (targetY - mouseY) * 0.035;
-                group.rotation.y = t * 0.55 + mouseX * 0.32;
-                group.rotation.x = Math.sin(t * 0.7) * 0.08 + mouseY * 0.18;
+                group.rotation.y = t * 0.12 + mouseX * 0.12;
+                group.rotation.x = Math.sin(t * 0.45) * 0.025 + mouseY * 0.055;
                 stars.rotation.y = -t * 0.08;
-                nodes.rotation.y = -t * 0.16;
-                lines.rotation.y = -t * 0.16;
-                ico.rotation.y -= 0.0014;
-                ico.rotation.x += 0.0008;
-                ico2.rotation.y += 0.0022;
-                ico2.rotation.x -= 0.0014;
-                orbitGroup.rotation.z = t * 0.2;
-                orbitGroup.rotation.y = -t * 0.15;
-                halo.scale.setScalar(1 + Math.sin(t * 2) * 0.025);
+                petals.forEach((petal) => {
+                    petal.position.y -= petal.userData.fallSpeed;
+                    petal.position.x += Math.sin(t * 1.2 + petal.userData.phase) * petal.userData.sway;
+                    petal.rotation.x += petal.userData.spin;
+                    petal.rotation.y += petal.userData.spin * 0.7;
+                    if (petal.position.y < -11) {
+                        petal.position.y = 11;
+                        petal.position.x = (Math.random() - 0.5) * 34;
+                    }
+                });
+                halo.material.opacity = 0.12 + Math.sin(t * 1.5) * 0.025;
                 renderer.render(scene, camera);
                 if (!reduceMotion) requestAnimationFrame(animate);
             }
