@@ -1,1015 +1,446 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadhlurrahman Naufal | My Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700;900&family=Share+Tech+Mono&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fadhlurrahman Naufal // Portfolio</title>
+<meta name="description" content="Portofolio Fadhlurrahman Naufal Nugraha, mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="intro-active" data-active-screen="home">
-
-    <canvas id="katakana-canvas" aria-hidden="true"></canvas>
-
-    <div class="site-intro" aria-hidden="true">
-        <div class="intro-topline">
-            <span><i></i> TOKYO NIGHT // PORTFOLIO</span>
-            <span>東京 <b>26</b></span>
-        </div>
-        <div class="intro-center">
-            <div class="intro-kicker"><span>CYBER DISTRICT</span><span>// 2026</span></div>
-            <div class="intro-name"><span>FADHLURRAHMAN</span><span>NAUFAL</span></div>
-            <div class="intro-role"><span>SHINJUKU AFTER DARK</span><i></i><span>CREATIVE CODE</span></div>
-        </div>
-        <div class="intro-bottom">
-            <div class="intro-status"><span><i></i> CONNECTING TO TOKYO GRID</span><span>ようこそ</span></div>
-            <div class="intro-line"><span></span></div>
-            <div class="intro-progress"><span>NEON DISTRICT 01 / 03</span><span>電脳</span></div>
-        </div>
-        <div class="intro-index" aria-hidden="true">一期一会</div>
+<!-- INTRO -->
+<div id="intro" role="status" aria-live="polite">
+  <span class="corner tl">35°41′N · 139°41′E</span><span class="corner tr">● ONLINE</span>
+  <span class="corner bl">SHINJUKU-KU · 新宿区</span><span class="corner br">FN_PORTFOLIO_v2.0</span>
+  <div class="intro-in">
+    <div class="intro-k">TOKYO NIGHT // PORTFOLIO</div>
+    <div class="intro-name">FADHLURRAHMAN</div>
+    <div class="intro-name2">NAUFAL</div>
+    <div class="intro-sub">SHINJUKU AFTER DARK // CREATIVE CODE</div>
+    <div class="intro-jp" lang="ja">ポートフォリオを読み込んでいます</div>
+    <div class="term" aria-hidden="true">
+      <div class="dots"><span style="background:var(--pink)"></span><span style="background:var(--amber)"></span><span style="background:var(--green)"></span><small style="color:#21909f"> tokyo-net :: terminal</small></div>
+      <div id="termLines"></div>
     </div>
+    <div class="bar"><div class="bar-h"><span>LOADING ASSETS</span><span id="pct">0%</span></div><div class="bar-t"><div class="bar-f" id="barF"></div></div></div>
+    <button class="skip" id="skip" type="button">[ LEWATI / SKIP ]</button>
+  </div>
+</div>
 
-    <header>
-        <nav class="wrap">
-            <a class="brand" href="#beranda" aria-label="Kembali ke Home">
-                <span class="brand-mark" aria-hidden="true"></span>
-                <span><strong>FN // PORTFOLIO</strong><small>ファドルラフマン ナウファル</small></span>
-            </a>
-            <div class="navlinks">
-                <a href="#beranda" data-screen="home" aria-current="page"><strong>HOME</strong><small>ホーム</small></a>
-                <a href="#tentang" data-screen="about"><strong>ABOUT</strong><small>について</small></a>
-                <a href="#skills" data-screen="skills"><strong>SKILLS</strong><small>スキル</small></a>
-                <a href="#proyek" data-screen="projects"><strong>PROJECTS</strong><small>プロジェクト</small></a>
-                <a href="#contact" data-screen="contact"><strong>CONTACT</strong><small>コンタクト</small></a>
-            </div>
-            <time class="system-clock" id="systemClock" aria-label="Waktu lokal"></time>
-        </nav>
-    </header>
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home" aria-label="FN Portfolio, ke bagian atas">
+      <b>FN</b><span>FN <i>//</i> PORTFOLIO<small lang="ja">ポートフォリオ</small></span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <ul class="links" id="links">
+        <li><a href="#home" data-s="home">HOME<small lang="ja">ホーム</small></a></li>
+        <li><a href="#about" data-s="about">ABOUT<small lang="ja">概要</small></a></li>
+        <li><a href="#skills" data-s="skills">SKILLS<small lang="ja">スキル</small></a></li>
+        <li><a href="#projects" data-s="projects">PROJECTS<small lang="ja">プロジェクト</small></a></li>
+        <li><a href="#certs" data-s="certs">CERTS<small lang="ja">証明書</small></a></li>
+        <li><a href="#contact" data-s="contact">CONTACT<small lang="ja">連絡</small></a></li>
+      </ul>
+    </nav>
+    <div class="clock" aria-label="Waktu Tokyo"><span id="clock">--:--:--</span><i>JST</i></div>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Buka menu navigasi"><span></span></button>
+  </div>
+</header>
 
-    <main class="screen-shell" id="screenShell">
-    <section class="hero" id="beranda">
-        <canvas id="hero-canvas" aria-hidden="true"></canvas>
-        <div class="wrap hero-grid">
-            <div>
-                <div class="eyebrow">// WELCOME TO MY PORTFOLIO</div>
-                <p class="hero-greeting">こんにちは、私は</p>
-                <h1 class="name">Fadhlurrahman<br><span>Naufal</span></h1>
-                <div class="role"><span class="role-dot"></span>MAHASISWA IT <span class="role-translation">／ IT STUDENT</span></div>
-                <p class="lede">Mahasiswa Teknologi Rekayasa Komputer yang tertarik pada software, jaringan, IoT, dan cybersecurity.<br><span>Building the future, one line at a time.</span></p>
-                <div class="btnrow">
-                    <a href="#proyek" class="btn btn-primary">LIHAT PROYEK <span aria-hidden="true">→</span></a>
-                    <a href="#contact" class="btn btn-outline">KONTAK SAYA</a>
-                </div>
-            </div>
-
-            <div class="hero-stage" id="heroStage" role="img" aria-label="Ilustrasi karakter anime di bawah langit senja Jepang">
-                <div class="hero-art-layer" id="heroArtLayer">
-                    <img class="hero-character" src="img/character-transparent.png" alt="Ilustrasi karakter anime">
-                </div>
-                <div class="hero-stage-caption"><span>東京 · TOKYO</span><span>SHINJUKU / 35°41′N</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tentang">
-        <div class="about-starfield" aria-hidden="true"></div>
-        <div class="wrap">
-            <div class="about-body">
-                <div class="about-name-backdrop" aria-hidden="true">
-                    <span>FADHLURRAHMAN</span>
-                    <span>NAUFAL</span>
-                </div>
-                <div class="about-text">
-                    <div class="section-head">
-                        <div class="index">// ABOUT ME :: 私について</div>
-                        <h2 class="title">SIAPA<br><span>SAYA?</span></h2>
-                    </div>
-                    <p>
-                        Halo! Saya Fadhlurrahman Naufal Nugraha, mahasiswa Teknologi Rekayasa Komputer di
-                        Politeknik Caltex Riau. Saya memiliki ketertarikan di bidang pengembangan aplikasi, web
-                        development, jaringan komputer, IoT, dan cybersecurity. Selama perkuliahan, saya telah
-                        mengerjakan berbagai project, mulai dari membangun aplikasi berbasis web dan Android,
-                        mengembangkan sistem IoT menggunakan ESP32, hingga melakukan konfigurasi dan simulasi
-                        jaringan komputer.
-                    </p>
-                    
-                    <div class="skill-title">// skill</div>
-                    <div class="chips">
-                        <span class="chip">HTML</span>
-                        <span class="chip">CSS</span>
-                        <span class="chip">Flexbox</span>
-                        <span class="chip">C</span>
-                        <span class="chip">C++</span>
-                        <span class="chip">PHP</span>
-                        <span class="chip">JAVA</span>
-                        <span class="chip">KOTLIN</span>
-                        <span class="chip">MySQL</span>
-                        <span class="chip">JavaScript</span>
-                        <span class="chip">Python</span>
-                        <span class="chip">Git &amp; GitHub</span>
-                        <span class="chip">Responsive Design</span>
-                    </div>
-                </div>
-                <div class="about-facts">
-                    <div class="about-identity">
-                        <img src="img/foto.png" alt="Foto Fadhlurrahman Naufal">
-                        <div><strong>Fadhlurrahman Naufal Nugraha</strong><small>Teknologi Rekayasa Komputer · PCR</small></div>
-                    </div>
-                    <div class="fact-row"><span>STATUS</span><strong>Mahasiswa aktif</strong></div>
-                    <div class="fact-row"><span>LOKASI</span><strong>Pekanbaru, Indonesia</strong></div>
-                    <div class="fact-row"><span>FOKUS</span><strong>Software · IoT · Networking</strong></div>
-                    <div class="fact-row"><span>MINAT</span><strong>Cybersecurity · DevOps</strong></div>
-                    <div class="fact-row"><span>MOTTO</span><strong>Terus belajar dan berkembang</strong></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="wrap skills-screen">
-            <div class="section-head centered-head">
-                <div class="index">// SKILLS :: スキル</div>
-                <h2 class="title">KEMAMPUAN <span>技術</span></h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h3>WEB &amp; SOFTWARE</h3>
-                    <div class="chips">
-                        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
-                        <span class="chip">PHP</span><span class="chip">Java</span><span class="chip">Kotlin</span>
-                        <span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">MySQL</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3>INFRASTRUCTURE</h3>
-                    <div class="chips">
-                        <span class="chip">Git &amp; GitHub</span><span class="chip">Networking</span>
-                        <span class="chip">IoT / ESP32</span><span class="chip">Responsive Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="learning-panel">
-                <div><span class="skill-title">// PERJALANAN MENUJU DEVOPS</span><span class="journey-status">LEARNING_MODE: ON</span></div>
-                <div class="journey-track">
-                    <div class="journey-line"><span class="journey-pulse"></span></div>
-                    <div class="journey-step active"><span class="skill-logo logo-linux">$_</span><strong>Linux</strong><small>Fondasi sistem</small></div>
-                    <div class="journey-step"><span class="skill-logo logo-network">NW</span><strong>Networking</strong><small>Koneksi</small></div>
-                    <div class="journey-step"><span class="skill-logo logo-cloud">CL</span><strong>Cloud</strong><small>Infrastruktur</small></div>
-                    <div class="journey-step"><span class="skill-logo logo-cicd">CI</span><strong>CI/CD</strong><small>Otomasi</small></div>
-                    <div class="journey-step"><span class="skill-logo logo-devops">DO</span><strong>DevOps</strong><small>Tujuan belajar</small></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="proyek">
-        <div class="wrap">
-            <div class="section-head centered-head">
-                <div class="index">// PROJECTS :: プロジェクト</div>
-                <h2 class="title">PROYEK <span>作品</span></h2>
-            </div>
-            <div class="proj-layout">
-                <div class="proj-grid">
-                    <div class="card3d-wrap">
-                        <div class="proj-card" data-tilt>
-                            <span class="proj-dot"></span>
-                            <div class="proj-num">Proyek 01</div>
-                            <h3>Aplikasi Trash to Cash</h3>
-                            <p>Projek UAS mata kuliah Pemrograman Mobile berbasis aplikasi Android, berfokus
-                                membantu para pengepul menjual barang bekas dan memudahkan proses transaksi.</p>
-                            <span class="detail">Lihat detail →</span>
-                        </div>
-                    </div>
-                    <div class="card3d-wrap">
-                        <div class="proj-card" data-tilt>
-                            <span class="proj-dot"></span>
-                            <div class="proj-num">Proyek 02</div>
-                            <h3>IoT Detektor Rupiah</h3>
-                            <p>Projek UAS mata kuliah MSE, berfokus mendeteksi mata uang rupiah dengan output
-                                mini speaker dan notifikasi Telegram saat nilai uang terbaca oleh sensor.</p>
-                            <span class="detail">Lihat detail →</span>
-                        </div>
-                    </div>
-                    <div class="card3d-wrap">
-                        <div class="proj-card" data-tilt>
-                            <span class="proj-dot"></span>
-                            <div class="proj-num">Proyek 03</div>
-                            <h3>Website Donat Marisu</h3>
-                            <p>Website kedua saya, dibuat untuk membantu penjualan donat sebuah UKM.
-                                Masih dalam tahap pengembangan lebih lanjut.</p>
-                            <span class="detail">Lihat detail →</span>
-                        </div>
-                    </div>
-                    <div class="card3d-wrap">
-                        <div class="proj-card" data-tilt>
-                            <span class="proj-dot"></span>
-                            <div class="proj-num">Proyek 04</div>
-                            <h3>Website Portofolio</h3>
-                            <p>Website portofolio pertama saya, berisi informasi diri, skill, dan proyek —
-                                kini tampil dengan visual 3D dan galeri sertifikat.</p>
-                            <span class="detail">Lihat detail →</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-shortcuts">
-                    <a href="#sertifikat" class="btn btn-outline projects-cert-link">LIHAT SERTIFIKAT <span aria-hidden="true">↓</span></a>
-                </div>
-                <div class="profile-card">
-                    <img class="avatar" src="img/foto.png" alt="Fadhlurrahman Naufal">
-                    <h3>Fadhlurrahman Naufal Nugraha</h3>
-                    <div class="profile-role">Calon DevOps Engineer</div>
-                    <div class="meta-row"><span class="k">LOKASI</span><span class="v">Kota Pekanbaru, Indonesia</span>
-                    </div>
-                    <div class="meta-row"><span class="k">STATUS</span><span class="v">Mahasiswa</span></div>
-                    <div class="meta-row"><span class="k">EMAIL</span><span
-                            class="v">fadlurrahmannaufal20@email.com</span></div>
-
-                    <div class="social-row">
-                        <a href="https://instagram.com/fadrrmn" target="_blank" rel="noopener" class="social-icon"
-                            aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <rect x="3" y="3" width="18" height="18" rx="5" />
-                                <circle cx="12" cy="12" r="4" />
-                                <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
-                            </svg>
-                        </a>
-                        <a href="https://facebook.com/fadlurrahmannaufal" target="_blank" rel="noopener"
-                            class="social-icon" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46H16.6V4.34C16.3 4.3 15.3 4.2 14.1 4.2c-2.4 0-4.1 1.47-4.1 4.16v2.24H7.4v3h2.6V21h3.5z" />
-                            </svg>
-                        </a>
-                        <a href="https://tiktok.com/@fadrrmn" target="_blank" rel="noopener" class="social-icon"
-                            aria-label="TikTok">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M14.5 3h2.3c.17 1.4 1 2.9 2.7 3.5.6.2 1.2.3 1.5.3v2.5c-1.4 0-2.7-.4-3.9-1.2v6.6c0 3-2.4 5.3-5.3 5.3S6.5 17.7 6.5 14.8c0-2.9 2.3-5.2 5.1-5.3v2.5c-1.5.1-2.7 1.3-2.7 2.8 0 1.6 1.3 2.8 2.9 2.8s2.9-1.2 2.9-2.8V3z" />
-                            </svg>
-                        </a>
-                        <a href="https://github.com/Fadrrmn" target="_blank" rel="noopener" class="social-icon"
-                            aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.4.1-2.8 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.8.6.7 1 1.5 1 2.6 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="btnrow">
-                        <a href="https://www.dicoding.com/users/fadhlurrahman_6b7z/academies" target="_blank"
-                            rel="noopener" class="btn btn-primary">Lihat Profil Dicoding</a>
-                        <a href="#sertifikat" class="btn btn-outline">Sertifikat</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sertifikat">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="index">// CERTIFICATES :: 認定</div>
-                <h2 class="title">SERTIFIKAT</h2>
-            </div>
-            <div class="cert-filter" id="certFilter">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="web">Web Dev</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
-                <button class="filter-btn" data-filter="network">Network &amp; IoT</button>
-            </div>
-            <div class="cert-grid" id="certGrid"></div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="index">// CONTACT :: コンタクト</div>
-                <h2 class="title">HUBUNGI <span>連絡</span></h2>
-            </div>
-            <div class="contact-layout">
-                <div class="contact-links">
-                    <a class="contact-link" href="mailto:fadlurrahmannaufal20@email.com"><span class="contact-icon">✉</span><span><small>EMAIL</small><strong>fadlurrahmannaufal20@email.com</strong></span></a>
-                    <a class="contact-link" href="https://github.com/Fadrrmn" target="_blank" rel="noopener"><span class="contact-icon">GH</span><span><small>GITHUB</small><strong>github.com/Fadrrmn</strong></span></a>
-                    <a class="contact-link" href="https://instagram.com/fadrrmn" target="_blank" rel="noopener"><span class="contact-icon">IG</span><span><small>INSTAGRAM</small><strong>@fadrrmn</strong></span></a>
-                    <a class="contact-link" href="https://www.dicoding.com/users/fadhlurrahman_6b7z/academies" target="_blank" rel="noopener"><span class="contact-icon">DC</span><span><small>DICODING</small><strong>Profil Academy</strong></span></a>
-                </div>
-                <form class="comment-form" id="commentForm">
-                    <label for="commentName">Nama</label>
-                    <input id="commentName" name="name" type="text" maxlength="40" placeholder="Nama kamu..." required>
-                    <label for="commentMessage">Pesan</label>
-                    <textarea id="commentMessage" name="message" rows="4" maxlength="240"
-                        placeholder="Tulis pesan kamu..." required></textarea>
-                    <div class="comment-form-footer">
-                        <span class="character-count" id="characterCount">0/240</span>
-                        <button class="btn btn-primary" type="submit">KIRIM PESAN <span aria-hidden="true">→</span></button>
-                    </div>
-                    <p class="comment-status" id="commentStatus" role="status" aria-live="polite"></p>
-                </form>
-            </div>
-            <div class="comment-list-wrap">
-                <div class="comment-list-head">
-                    <span class="skill-title">// PESAN PENGUNJUNG</span>
-                    <span class="comment-total" id="commentTotal">0 pesan</span>
-                </div>
-                <div class="comment-list" id="commentList" aria-live="polite"></div>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <footer>
-        <div class="footer-status"><span>&gt; FADHLURRAHMAN_NAUFAL :: IT_STUDENT :: PORTFOLIO_OS v1.0</span><div class="footer-tech"><span><i></i>HTML</span><span><i></i>JS</span><span><i></i>PY</span><span><i></i>DB</span></div></div>
-    </footer>
-
-    <div class="modal-backdrop" id="certModal">
-        <div class="modal">
-            <div class="modal-cert-visual">
-                <div class="modal-close" id="certModalClose">✕</div>
-                <svg class="seal" viewBox="0 0 64 64" fill="none" id="modalSeal">
-                    <circle cx="32" cy="26" r="18" stroke="#4da3ff" stroke-width="2.5" />
-                    <circle cx="32" cy="26" r="11" stroke="#8ecbff" stroke-width="1.5" />
-                    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#4da3ff" stroke-width="2.5"
-                        stroke-linejoin="round" fill="none" />
-                    <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <div class="cert-thumb-org"
-                    style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:#5c6b62;text-transform:uppercase;">
-                    DICODING INDONESIA</div>
-            </div>
-            <div class="modal-info">
-                <div class="index" id="modalIndex">SERTIFIKAT</div>
-                <h3 id="modalTitle">Judul Sertifikat</h3>
-                <div class="meta-row"><span class="k">PENERBIT</span><span class="v" id="modalIssuer">Dicoding</span>
-                </div>
-                <div class="meta-row"><span class="k">TANGGAL TERBIT</span><span class="v" id="modalDate">—</span></div>
-                <div class="meta-row"><span class="k">ID SERTIFIKAT</span><span class="v" id="modalId">—</span></div>
-                <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modalLink">Lihat Sertifikat Asli
-                    ↗</a>
-            </div>
-        </div>
+<main>
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <canvas id="three" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="status">STATUS :: ONLINE <i lang="ja">| こんにちは</i></div>
+      <p class="greet" lang="ja">ようこそ · SELAMAT DATANG</p>
+      <h1 class="name"><span class="a">Fadhlurrahman</span><span class="b">Naufal</span></h1>
+      <div class="role">MAHASISWA IT <span>/ IT STUDENT</span></div>
+      <p class="lead">Mahasiswa Teknologi Rekayasa Komputer yang tertarik pada software, jaringan, IoT, dan cybersecurity.</p>
+      <p class="tag">"Building the future, one line at a time."</p>
+      <div class="cta">
+        <a class="btn pri" href="#projects">LIHAT PROYEK</a>
+        <a class="btn" href="#contact">KONTAK SAYA</a>
+      </div>
+      <p class="loc">TOKYO · SHINJUKU / 35°41′N <span>· Pekanbaru, Indonesia</span></p>
     </div>
+    <div class="char-wrap" id="charWrap">
+      <div class="char" id="char">
+        <img src="img/character-transparent.png" alt="Ilustrasi karakter anime bergaya cyberpunk" id="charImg">
+        <svg id="charFb" viewBox="0 0 200 300" hidden role="img" aria-label="Siluet karakter cyberpunk"><g fill="#160c2c" stroke="#ff2d78" stroke-width="2"><ellipse cx="100" cy="50" rx="34" ry="38"/><path d="M62 96h76l14 90-14 4v92h-28v-80h-20v80H62v-92l-14-4z"/></g><g fill="#00e5ff"><circle cx="88" cy="52" r="4"/><circle cx="112" cy="52" r="4"/></g><rect x="86" y="120" width="28" height="18" fill="none" stroke="#00e5ff"/></svg>
+      </div>
+      <i class="brk t"></i><i class="brk b"></i>
+      <span class="tagline" style="top:10px;left:0">ID_CHAR_001</span>
+      <span class="tagline" style="bottom:10px;right:0">PIX_0140 / TKY_2032</span>
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true">SCROLL</div>
+</section>
 
-    <script>
-        /* ============ CERTIFICATE DATA ============
-           Ganti nilai di bawah ini dengan data sertifikat asli kamu.
-           Field "img" boleh diisi path/URL gambar hasil scan sertifikat;
-           jika dikosongkan, kartu memakai tampilan lambang default. */
-        const certificates = [
-            {
-                title: "Belajar Dasar Pemrograman Web",
-                issuer: "Dicoding Indonesia",
-                date: "agustus 2026",
-                id: "JMOZ1234ABCD",
-                category: "web",
-                tag: "Web Dev",
-                img: "sertifikat/sertifikat-belajarpemrrogrammanweb.pdf",
-                link: "sertifikat-belajarpemrrogrammanweb.pdf"
-            },
-            {
-                title: "Belajar Dasar AI",
-                issuer: "Dicoding Indonesia",
-                date: "Feb 2026",
-                id: "JMOZ5678EFGH",
-                category: "web",
-                tag: "AI",
-                img: "sertifikat/sertifikat_DasarAi.pdf",
-                link: "sertifikat/sertifikat_DasarAi.pdf"
-            },
-            {
-                title: "CISCO Introduction to IoT",
-                issuer: "CISCO Networking Academy",
-                date: "Mei 2025",
-                id: "JMOZ7890QRST",
-                category: "network",
-                tag: "IoT",
-                img: "sertifikat/_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-IOT.pdf",
-                link: "sertifikat/_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-IOT.pdf"
-            },
-            {
-                title: "CISCO Networking",
-                issuer: "CISCO Networking Academy",
-                date: "Mei 2025",
-                id: "JMOZ7890QRST",
-                category: "network",
-                tag: "network",
-                img: "sertifikat/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_18b0b9fd-2d4d-459d-820d-b3cd7915ae1b.pdf",
-                link: "sertifikat/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_18b0b9fd-2d4d-459d-820d-b3cd7915ae1b.pdf"
-            },
-            {
-                title: "CISCO Networking",
-                issuer: "CISCO Networking Academy",
-                date: "Mei 2025",
-                id: "JMOZ7890QRST",
-                category: "network",
-                tag: "network",
-                img: "sertifikat/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_74dfd7d0-ad68-48b9-b966-f5d50ea975ac.pdf",
-                link: "sertifikat/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_74dfd7d0-ad68-48b9-b966-f5d50ea975ac.pdf"
-            },
-            {
-                title: "Introduction to Cybersecurity",
-                issuer: "CISCO Networking Academy",
-                date: "Mei 2025",
-                id: "JMOZ7890QRST",
-                category: "cybersecurity",
-                tag: "cybersecurity",
-                img: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf",
-                link: "sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf"
-            },
-            {
-                title: "Junior Cybersecurity Analyst Career Path",
-                issuer: "CISCO Networking Academy",
-                date: "Mei 2025",
-                id: "JMOZ7890QRST",
-                category: "cybersecurity",
-                tag: "cybersecurity",
-                img: "sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf",
-                link: "sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf"
-            },
-            {
-                title: "Belajar Dasar Sistem IoT dengan ESP32",
-                issuer: "Dicoding Indonesia",
-                date: "Jun 2025",
-                id: "JMOZ2468UVWX",
-                category: "network",
-                tag: "iot",
-                img: null,
-                link: "#"
-            }
-        ];
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="shoot" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 01 · 概要</div><h2>SIAPA SAYA? <small lang="ja">自己紹介</small></h2></div>
+    <div class="about">
+      <div class="photo reveal"><div class="fb" aria-hidden="true"></div><img src="img/foto.png" alt="Foto profil Fadhlurrahman Naufal Nugraha" id="fotoImg"></div>
+      <div class="reveal">
+        <h3>Fadhlurrahman Naufal Nugraha</h3>
+        <p>Saya mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau. Saya tertarik pada pengembangan aplikasi, web development, jaringan komputer, IoT, dan cybersecurity.</p>
+        <p>Saya pernah mengerjakan proyek web dan Android, membuat perangkat berbasis ESP32, serta melakukan konfigurasi dan simulasi jaringan.</p>
+        <dl class="facts">
+          <dt>STATUS</dt><dd>Mahasiswa aktif</dd>
+          <dt>LOKASI</dt><dd>Pekanbaru, Indonesia</dd>
+          <dt>FOKUS</dt><dd>Software · IoT · Networking</dd>
+          <dt>MINAT</dt><dd>Cybersecurity · DevOps</dd>
+          <dt>MOTTO</dt><dd>Terus belajar dan berkembang</dd>
+        </dl>
+        <ul class="chips" style="list-style:none" aria-label="Teknologi yang dipakai">
+          <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">C</li><li class="chip">C++</li><li class="chip">PHP</li><li class="chip">Java</li><li class="chip">Kotlin</li><li class="chip">MySQL</li><li class="chip">JavaScript</li><li class="chip">Python</li><li class="chip">Git &amp; GitHub</li><li class="chip">Responsive Design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        const sealSVG = `<svg class="seal" viewBox="0 0 64 64" fill="none">
-    <circle cx="32" cy="26" r="18" stroke="#4da3ff" stroke-width="2.5"/>
-    <circle cx="32" cy="26" r="11" stroke="#8ecbff" stroke-width="1.5"/>
-    <path d="M22 40 L18 58 L32 50 L46 58 L42 40" stroke="#4da3ff" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-  <path d="M25 26 L30 31 L40 20" stroke="#7fd88f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-
-        const certGrid = document.getElementById('certGrid');
-
-        function renderCerts(filter) {
-            certGrid.innerHTML = '';
-            certificates
-                .filter(c => filter === 'all' || c.category === filter)
-                .forEach((c, i) => {
-                    const card = document.createElement('div');
-                    card.className = 'cert-card';
-                    card.setAttribute('data-tilt-cert', '');
-                    const visual = c.img
-                        ? (c.img.toLowerCase().endsWith('.pdf')
-                            ? `<object class="cert-image cert-pdf" data="${c.img}" type="application/pdf" aria-label="${c.title}"></object>`
-                            : `<img class="cert-image" src="${c.img}" alt="${c.title}">`)
-                        : `${sealSVG}<div class="org">Dicoding Indonesia</div>`;
-                    card.innerHTML = `
-        <div class="cert-thumb">
-          <span class="cert-tag">${c.tag}</span>
-                    ${visual}
+<!-- SKILLS -->
+<section id="skills" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 02 · スキル</div><h2>KEMAMPUAN <small lang="ja">技術スタック</small></h2></div>
+    <div class="skills">
+      <div class="panel reveal">
+        <div class="ph" style="color:var(--cyan)"><span><b style="background:var(--cyan)"></b>WEB &amp; SOFTWARE</span></div>
+        <ul class="sk-list">
+            <li style="--c:#ff7a2f"><span class="skill-label">HTML</span><span class="skill-percent">85%</span><progress value="85" max="100" aria-label="HTML 85%">85%</progress></li>
+            <li style="--c:var(--cyan)"><span class="skill-label">CSS</span><span class="skill-percent">80%</span><progress value="80" max="100" aria-label="CSS 80%">80%</progress></li>
+            <li style="--c:var(--amber)"><span class="skill-label">JavaScript</span><span class="skill-percent">75%</span><progress value="75" max="100" aria-label="JavaScript 75%">75%</progress></li>
+            <li style="--c:#8f8cb8"><span class="skill-label">PHP</span><span class="skill-percent">65%</span><progress value="65" max="100" aria-label="PHP 65%">65%</progress></li>
+            <li style="--c:#ff9a2f"><span class="skill-label">Java</span><span class="skill-percent">65%</span><progress value="65" max="100" aria-label="Java 65%">65%</progress></li>
+            <li style="--c:#9b6bff"><span class="skill-label">Kotlin</span><span class="skill-percent">62%</span><progress value="62" max="100" aria-label="Kotlin 62%">62%</progress></li>
+            <li style="--c:#2d7dff"><span class="skill-label">C / C++</span><span class="skill-percent">72%</span><progress value="72" max="100" aria-label="C / C++ 72%">72%</progress></li>
+            <li style="--c:var(--green)"><span class="skill-label">Python</span><span class="skill-percent">68%</span><progress value="68" max="100" aria-label="Python 68%">68%</progress></li>
+            <li style="--c:var(--pink)"><span class="skill-label">MySQL</span><span class="skill-percent">76%</span><progress value="76" max="100" aria-label="MySQL 76%">76%</progress></li>
+        </ul>
+      </div>
+      <div class="stack">
+        <div class="panel reveal">
+          <div class="ph" style="color:var(--pink)"><span><b style="background:var(--pink)"></b>INFRASTRUCTURE</span></div>
+          <ul class="sk-list two">
+              <li style="--c:var(--pink)"><span class="skill-label">Git &amp; GitHub</span><span class="skill-percent">75%</span><progress value="75" max="100" aria-label="Git and GitHub 75%">75%</progress></li>
+              <li style="--c:var(--cyan)"><span class="skill-label">Networking</span><span class="skill-percent">72%</span><progress value="72" max="100" aria-label="Networking 72%">72%</progress></li>
+              <li style="--c:var(--green)"><span class="skill-label">IoT / ESP32</span><span class="skill-percent">68%</span><progress value="68" max="100" aria-label="IoT and ESP32 68%">68%</progress></li>
+              <li style="--c:var(--amber)"><span class="skill-label">Responsive Design</span><span class="skill-percent">78%</span><progress value="78" max="100" aria-label="Responsive Design 78%">78%</progress></li>
+          </ul>
         </div>
-        <div class="cert-body">
-          <h4>${c.title}</h4>
-          <div class="cert-meta">
-            <span>${c.date}</span>
-            <span>${c.id}</span>
-          </div>
+        <div class="panel reveal">
+          <div class="ph" style="color:var(--green)"><span><b style="background:var(--green)"></b>DEVOPS LEARNING PATH</span><span class="learn">● LEARNING_MODE: ON</span></div>
+          <ol class="path">
+            <li class="active"><span class="node" aria-hidden="true"></span><div><b>Linux <em lang="ja">リナックス</em><span class="badge">ACTIVE</span></b><p>Dasar command line &amp; administrasi sistem</p></div></li>
+            <li class="done"><span class="node" aria-hidden="true">✓</span><div><b>Networking <em lang="ja">ネットワーク</em></b><p>TCP/IP, routing, Cisco Packet Tracer</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">03</span><div><b>Cloud <em lang="ja">クラウド</em></b><p>AWS / GCP fundamental</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">04</span><div><b>CI/CD</b><p>Pipeline otomatisasi deployment</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">05</span><div><b>DevOps <em lang="ja">デブオプス</em></b><p>Docker, Kubernetes, Infrastructure as Code</p></div></li>
+          </ol>
         </div>
-      `;
-                    card.addEventListener('click', () => openModal(c));
-                    certGrid.appendChild(card);
-                });
-            attachTilt('[data-tilt-cert]', 6);
-        }
+      </div>
+    </div>
+  </div>
+</section>
 
-        renderCerts('all');
+<!-- PROJECTS -->
+<section id="projects" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 03 · プロジェクト</div><h2>PROYEK <small lang="ja">プロジェクト一覧</small></h2></div>
+    <div class="proj">
+      <div class="cards" id="cards"></div>
+      <aside class="panel pcard reveal" aria-label="Profil singkat">
+        <div class="ph"><span>● PROFILE_CARD</span></div>
+        <div class="who"><div class="av">FN</div><div><b>Fadhlurrahman N.</b><span>Calon DevOps Engineer</span></div></div>
+        <dl>
+          <div><dt>KAMPUS</dt><dd>Politeknik Caltex Riau</dd></div>
+          <div><dt>LOKASI</dt><dd>Pekanbaru, Indonesia</dd></div>
+          <div><dt>STATUS</dt><dd>Mahasiswa Aktif</dd></div>
+          <div><dt>EMAIL</dt><dd><a href="mailto:fadhlurrahmannaufal@gmail.com" style="color:var(--cyan)">fadhlurrahmannaufal@gmail.com</a></dd></div>
+        </dl>
+        <a class="dic" href="https://www.dicoding.com/users/fadhlurrahman_naufal" target="_blank" rel="noopener">◈ Profil Dicoding</a>
+        <div class="soc" id="soc"></div>
+      </aside>
+    </div>
+  </div>
+</section>
 
-        document.getElementById('certFilter').addEventListener('click', (e) => {
-            if (!e.target.classList.contains('filter-btn')) return;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            renderCerts(e.target.dataset.filter);
-        });
+<!-- CERTS -->
+<section id="certs" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 04 · 証明書</div><h2>SERTIFIKAT <small lang="ja">認定証</small></h2></div>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter kategori sertifikat"></div>
+    <div class="certs" id="certs-grid"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+</section>
 
-        /* ---------- Modal ---------- */
-        const modal = document.getElementById('certModal');
-        function openModal(c) {
-            document.getElementById('modalIndex').textContent = c.tag.toUpperCase();
-            document.getElementById('modalTitle').textContent = c.title;
-            document.getElementById('modalIssuer').textContent = c.issuer;
-            document.getElementById('modalDate').textContent = c.date;
-            document.getElementById('modalId').textContent = c.id;
-            document.getElementById('modalLink').href = c.link;
-            const modalVisual = document.querySelector('.modal-cert-visual');
-            const existingImage = modalVisual.querySelector('.modal-cert-image');
-            if (existingImage) existingImage.remove();
-            if (c.img) {
-                const image = c.img.toLowerCase().endsWith('.pdf')
-                    ? document.createElement('object')
-                    : document.createElement('img');
-                image.className = 'modal-cert-image';
-                image.setAttribute('aria-label', c.title);
-                if (image.tagName === 'OBJECT') {
-                    image.data = c.img;
-                    image.type = 'application/pdf';
-                } else {
-                    image.src = c.img;
-                    image.alt = c.title;
-                }
-                modalVisual.insertBefore(image, modalVisual.firstChild);
-                modalVisual.querySelector('.seal').style.display = 'none';
-                modalVisual.querySelector('.cert-thumb-org').style.display = 'none';
-            } else {
-                modalVisual.querySelector('.seal').style.display = '';
-                modalVisual.querySelector('.cert-thumb-org').style.display = '';
-            }
-            modal.classList.add('open');
-        }
-        document.getElementById('certModalClose').addEventListener('click', () => modal.classList.remove('open'));
-        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 05 · 連絡</div><h2>KONTAK <small lang="ja">お問い合わせ</small></h2></div>
+    <div class="contact">
+      <div class="reveal">
+        <p>Tertarik berkolaborasi, berdiskusi tentang teknologi, atau sekadar menyapa? Saya terbuka untuk koneksi dan peluang baru.</p>
+        <div class="clinks">
+          <a class="clink" href="mailto:fadhlurrahmannaufal@gmail.com" style="--c:var(--pink)"><span class="ic" aria-hidden="true">@</span><div><small>EMAIL</small><span>fadhlurrahmannaufal@gmail.com</span></div></a>
+          <a class="clink" href="https://github.com/fadhlurrahmannaufal" target="_blank" rel="noopener" style="--c:#fff"><span class="ic" aria-hidden="true">GH</span><div><small style="color:#fff">GITHUB</small><span>github.com/fadhlurrahmannaufal</span></div></a>
+          <a class="clink" href="https://www.instagram.com/fadhlurrahman_naufal" target="_blank" rel="noopener" style="--c:var(--pink)"><span class="ic" aria-hidden="true">IG</span><div><small>INSTAGRAM</small><span>@fadhlurrahman_naufal</span></div></a>
+          <a class="clink" href="https://www.dicoding.com/users/fadhlurrahman_naufal" target="_blank" rel="noopener" style="--c:var(--cyan)"><span class="ic" aria-hidden="true">DC</span><div><small>DICODING</small><span>fadhlurrahman_naufal</span></div></a>
+        </div>
+        <div class="avail"><h4>● AVAILABLE FOR</h4><ul><li>Magang &amp; Internship</li><li>Proyek Freelance</li><li>Kolaborasi Open Source</li><li>Diskusi Teknologi</li></ul></div>
+      </div>
+      <div class="panel reveal">
+        <form id="form" novalidate>
+          <div class="ph" style="color:var(--cyan);margin-bottom:0"><span><b style="background:var(--cyan)"></b>TINGGALKAN PESAN</span><span style="color:var(--mute);font-weight:400">[disimpan lokal]</span></div>
+          <label for="fname">NAMA / NAME <span class="n" id="nameN">0/40</span></label>
+          <input id="fname" maxlength="40" autocomplete="name" placeholder="Siapa kamu?" required>
+          <label for="fmsg">PESAN / MESSAGE <span class="n" id="msgN">0/240</span></label>
+          <textarea id="fmsg" maxlength="240" placeholder="Tulis pesanmu di sini..." required></textarea>
+          <button class="btn pri" type="submit">KIRIM PESAN</button>
+          <p class="fstatus" id="fstatus" role="status" aria-live="polite"></p>
+        </form>
+        <div class="msgs">
+          <div class="msgs-h"><span>PESAN TERSIMPAN</span><button type="button" id="clearAll">HAPUS SEMUA</button></div>
+          <div id="msgList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-        /* ---------- Local comments ---------- */
-        const commentForm = document.getElementById('commentForm');
-        const commentName = document.getElementById('commentName');
-        const commentMessage = document.getElementById('commentMessage');
-        const commentList = document.getElementById('commentList');
-        const commentTotal = document.getElementById('commentTotal');
-        const commentStatus = document.getElementById('commentStatus');
-        const characterCount = document.getElementById('characterCount');
-        const commentStorageKey = 'fadhlurrahman-portfolio-comments';
+<footer>
+  <div class="wrap foot">
+    <span><b>FADHLURRAHMAN_NAUFAL</b> :: IT_STUDENT :: PORTFOLIO_OS</span>
+    <div class="ind"><span>HTML</span><span>JS</span><span>PYTHON</span><span>DATABASE</span></div>
+  </div>
+</footer>
 
-        function getComments() {
-            try {
-                return JSON.parse(localStorage.getItem(commentStorageKey)) || [];
-            } catch (error) {
-                return [];
-            }
-        }
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="mprev" id="mPrev"></div>
+    <div class="minfo">
+      <button class="x" id="mClose" type="button" aria-label="Tutup jendela">✕</button>
+      <span class="k" id="mKind"></span>
+      <h3 id="mTitle"></h3>
+      <dl id="mDl"></dl>
+      <p class="note" id="mNote"></p>
+      <a class="btn" id="mOpen" target="_blank" rel="noopener">LIHAT SERTIFIKAT ASLI</a>
+    </div>
+  </div>
+</div>
 
-        function renderComments() {
-            const comments = getComments();
-            commentList.innerHTML = '';
-            commentTotal.textContent = `${comments.length} pesan`;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            if (!comments.length) {
-                commentList.innerHTML = '<div class="comment-empty">Belum ada pesan. Jadilah yang pertama.</div>';
-                return;
-            }
+/* ===== DATA (edit di sini) ===== */
+// Satu entri untuk setiap sertifikat PDF unik yang tersedia di folder sertifikat.
+const CERTS = [
+  {t:'Belajar Dasar Pemrograman Web', p:'Dicoding Indonesia', d:'Agu 2023', id:'ERZR663Y', c:'web', file:'sertifikat/sertifikat-belajarpemrrogrammanweb.pdf'},
+  {t:'CCNA: Enterprise Networking, Security, and Automation', p:'Cisco Networking Academy', d:'—', id:'—', c:'net', file:'sertifikat/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_18b0b9fd-2d4d-459d-820d-b3cd7915ae1b.pdf'},
+  {t:'CCNA: Switching, Routing, and Wireless Essentials', p:'Cisco Networking Academy', d:'—', id:'—', c:'net', file:'sertifikat/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_74dfd7d0-ad68-48b9-b966-f5d50ea975ac.pdf'},
+  {t:'Introduction to Cybersecurity', p:'Cisco Networking Academy', d:'Sep 2023', id:'CISCO-IC', c:'cyber', file:'sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf'},
+  {t:'Introduction to IoT', p:'Cisco Networking Academy', d:'Nov 2023', id:'CISCO-II', c:'net', file:'sertifikat/_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-IOT.pdf'},
+  {t:'Junior Cybersecurity Analyst Career Path', p:'Cisco Networking Academy', d:'—', id:'—', c:'cyber', file:'sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf'},
+  {t:'Belajar Dasar AI', p:'Dicoding Indonesia', d:'—', id:'—', c:'ai', file:'sertifikat/sertifikat_DasarAi.pdf'},
+];
+const CATS = [['all','Semua'],['web','Web Dev'],['cyber','Cybersecurity'],['net','Network & IoT'],['ai','AI']];
+const CAT_LABEL = {web:'WEB DEV', cyber:'CYBERSECURITY', net:'NETWORK & IOT', ai:'AI'};
 
-            comments.forEach((comment) => {
-                const item = document.createElement('article');
-                item.className = 'comment-item';
+const PROJECTS = [
+  {n:'01', t:'Trash to Cash', ty:'Aplikasi Android', c:'var(--green)', ic:'♻',
+   s:'Aplikasi Android untuk membantu pengepul menjual barang bekas dan memudahkan transaksi.', tags:['Android','Kotlin','Java','MySQL'], st:'Selesai'},
+  {n:'02', t:'IoT Detektor Rupiah', ty:'Sistem IoT', c:'var(--cyan)', ic:'◈',
+   s:'Sistem pendeteksi mata uang Rupiah dengan output mini speaker dan notifikasi Telegram.', tags:['ESP32','IoT','Python','Telegram'], st:'Selesai'},
+  {n:'03', t:'Website Donat Marisu', ty:'Web UKM', c:'var(--amber)', ic:'◐', dev:true,
+   s:'Website untuk membantu penjualan donat sebuah UKM. Masih dalam pengembangan.', tags:['HTML','CSS','PHP','MySQL'], st:'Dalam pengembangan'},
+  {n:'04', t:'Website Portofolio', ty:'Personal Portfolio', c:'var(--pink)', ic:'▣',
+   s:'Portofolio pertama yang berisi profil, kemampuan, proyek, visual 3D, dan galeri sertifikat.', tags:['HTML','CSS','JavaScript','Three.js'], st:'Selesai'},
+];
+// Isi url bila tersedia; yang kosong tampil nonaktif.
+const SOCIAL = [
+  ['GH','GitHub','https://github.com/fadhlurrahmannaufal'],
+  ['IG','Instagram','https://www.instagram.com/fadhlurrahman_naufal'],
+  ['FB','Facebook',''],
+  ['TT','TikTok',''],
+];
 
-                const header = document.createElement('div');
-                header.className = 'comment-item-head';
-                const name = document.createElement('strong');
-                name.textContent = comment.name;
-                const date = document.createElement('time');
-                date.textContent = new Date(comment.createdAt).toLocaleDateString('id-ID', {
-                    day: 'numeric', month: 'short', year: 'numeric'
-                });
-                header.append(name, date);
+/* ===== INTRO ===== */
+const intro = $('#intro');
+const lines = ['> TOKYO_NET :: INITIALIZING... [OK]','> Connecting to SHINJUKU district... [OK]','> Loading FADHLURRAHMAN_NAUFAL.portfolio'];
+let introDone = false;
+function endIntro(){ if(introDone) return; introDone = true; intro.classList.add('done'); document.body.style.overflow=''; setTimeout(()=>intro.remove(),800); }
+document.body.style.overflow='hidden';
+(function runIntro(){
+  const box = $('#termLines'); const total = reduce ? 500 : 2400; const t0 = performance.now();
+  lines.forEach((l,i)=>setTimeout(()=>{ if(introDone) return; $$('.ln',box).forEach(x=>x.classList.remove('cur')); const s=document.createElement('span'); s.className='ln cur'; s.textContent=l; box.appendChild(s); }, (reduce?0:i*650)));
+  (function tick(){ if(introDone) return; const p=Math.min(1,(performance.now()-t0)/total); $('#barF').style.width=(p*100)+'%'; $('#pct').textContent=Math.round(p*100)+'%'; if(p<1) requestAnimationFrame(tick); else setTimeout(endIntro,250); })();
+  $('#skip').addEventListener('click',endIntro);
+  addEventListener('keydown',e=>{ if(!introDone && (e.key==='Enter'||e.key==='Escape'||e.key===' ')) endIntro(); });
+})();
 
-                const message = document.createElement('p');
-                message.textContent = comment.message;
-                const removeButton = document.createElement('button');
-                removeButton.className = 'comment-delete';
-                removeButton.type = 'button';
-                removeButton.textContent = 'Hapus';
-                removeButton.addEventListener('click', () => {
-                    localStorage.setItem(commentStorageKey, JSON.stringify(getComments().filter(item => item.id !== comment.id)));
-                    renderComments();
-                });
+/* ===== CLOCK ===== */
+const fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+const clk = $('#clock'); const tick = () => clk.textContent = fmt.format(new Date()); tick(); setInterval(tick,1000);
 
-                item.append(header, message, removeButton);
-                commentList.appendChild(item);
-            });
-        }
+/* ===== NAV ===== */
+const burger = $('#burger'), links = $('#links');
+burger.addEventListener('click',()=>{ const o=links.classList.toggle('open'); burger.setAttribute('aria-expanded',o); burger.setAttribute('aria-label',o?'Tutup menu navigasi':'Buka menu navigasi'); });
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }));
+const secs = ['home','about','skills','projects','certs','contact'].map(id=>document.getElementById(id));
+const navIO = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ $$('#links a').forEach(a=>{ const on=a.dataset.s===e.target.id; a.classList.toggle('active',on); on?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'); }); } }),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>navIO.observe(s));
 
-        commentMessage.addEventListener('input', () => {
-            characterCount.textContent = `${commentMessage.value.length}/240`;
-        });
+/* ===== REVEAL ===== */
+const rIO = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); rIO.unobserve(e.target);} }),{threshold:.12});
+const observeReveal = () => $$('.reveal:not(.in)').forEach(el=>rIO.observe(el));
 
-        commentForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const name = commentName.value.trim();
-            const message = commentMessage.value.trim();
-            if (!name || !message) return;
+/* ===== IMAGES with fallback ===== */
+(function(){
+  const bg = new Image(); bg.onload=()=>$('#heroBg').classList.add('has-img'); bg.src='img/japan-dusk.png';
+  const ch = $('#charImg'); ch.onerror=()=>{ ch.hidden=true; $('#charFb').hidden=false; };
+  const ft = $('#fotoImg'); ft.onerror=()=>ft.remove();
+})();
 
-            const comments = getComments();
-            comments.unshift({ id: Date.now(), name, message, createdAt: new Date().toISOString() });
-            localStorage.setItem(commentStorageKey, JSON.stringify(comments));
-            commentForm.reset();
-            characterCount.textContent = '0/240';
-            commentStatus.textContent = 'Komentar berhasil ditambahkan.';
-            renderComments();
-        });
+/* ===== HERO TILT ===== */
+(function(){
+  const w=$('#charWrap'), c=$('#char'); if(reduce) return;
+  w.addEventListener('pointermove',e=>{ const r=w.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; c.style.transform=`rotateY(${x*14}deg) rotateX(${-y*10}deg)`; });
+  w.addEventListener('pointerleave',()=>c.style.transform='');
+})();
 
-        renderComments();
+/* ===== PROJECTS ===== */
+const cards = $('#cards');
+PROJECTS.forEach((p,i)=>{
+  const el=document.createElement('article'); el.className='card reveal'; el.style.setProperty('--c',p.c);
+  el.innerHTML=`<div class="no" aria-hidden="true">${p.n}</div><h3></h3><div class="type"></div><p></p><div class="tags"></div><button class="more" type="button"></button>`;
+  $('h3',el).textContent=p.t; $('.type',el).textContent=p.ty; if(p.dev){ const d=document.createElement('span'); d.className='dev'; d.textContent='IN_DEV'; $('.type',el).appendChild(d); }
+  $('p',el).textContent=p.s; p.tags.forEach(t=>{ const s=document.createElement('span'); s.textContent=t; $('.tags',el).appendChild(s); });
+  const b=$('.more',el); b.textContent='LIHAT DETAIL ›'; b.setAttribute('aria-label','Lihat detail '+p.t);
+  b.addEventListener('click',()=>openModal({kind:'PROJECT_'+p.n, title:p.t, color:p.c, big:p.n, rows:[['JENIS',p.ty],['STATUS',p.st],['RINGKASAN',p.s],['TEKNOLOGI',p.tags.join(' · ')]], note:'Tautan proyek belum tersedia.'}));
+  if(!reduce){
+    el.addEventListener('pointermove',e=>{ const r=el.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5; el.style.transform=`perspective(800px) rotateY(${x*5}deg) rotateX(${-y*5}deg)`; });
+    el.addEventListener('pointerleave',()=>el.style.transform='');
+  }
+  cards.appendChild(el);
+});
+const gb=document.createElement('button'); gb.className='gal-btn'; gb.type='button'; gb.textContent='★  LIHAT GALERI SERTIFIKAT  ↓';
+gb.addEventListener('click',()=>document.getElementById('certs').scrollIntoView({behavior:reduce?'auto':'smooth'})); cards.appendChild(gb);
+SOCIAL.forEach(([s,n,u])=>{ let el; if(u){ el=document.createElement('a'); el.href=u; el.target='_blank'; el.rel='noopener'; el.setAttribute('aria-label',n); } else { el=document.createElement('span'); el.setAttribute('aria-label',n+' (belum tersedia)'); el.title=n+' belum tersedia'; } el.textContent=s; $('#soc').appendChild(el); });
 
-        /* ---------- Section transitions ---------- */
-        document.body.classList.add('js-reveal');
-        const sections = document.querySelectorAll('section:not(.hero)');
-        function showSection(section) {
-            section.classList.add('section-visible');
-        }
+/* ===== CERTS ===== */
+const grid=$('#certs-grid'), fl=$('#filters'); let cur='all', lastFocus=null;
+CATS.forEach(([k,l])=>{ const n=k==='all'?CERTS.length:CERTS.filter(c=>c.c===k).length; const b=document.createElement('button'); b.type='button'; b.dataset.k=k; b.setAttribute('aria-pressed',k==='all'); b.innerHTML=`${l}<em>(${n})</em>`; b.addEventListener('click',()=>{ cur=k; $$('button',fl).forEach(x=>x.setAttribute('aria-pressed',x===b)); applyFilter(); }); fl.appendChild(b); });
+CERTS.forEach((c,i)=>{
+  const b=document.createElement('button'); b.type='button'; b.className='cert t-'+c.c; b.dataset.c=c.c;
+  b.innerHTML=`<div class="cat"><span></span><i></i></div><h3></h3><div class="pub"></div><div class="meta"><span></span><b></b></div>`;
+  $('.cat span',b).textContent=CAT_LABEL[c.c]; $('h3',b).textContent=c.t; $('.pub',b).textContent=c.p; $('.meta span',b).textContent=c.d; $('.meta b',b).textContent=c.id;
+  b.setAttribute('aria-label','Buka sertifikat '+c.t);
+  b.addEventListener('click',()=>openCert(c));
+  grid.appendChild(b);
+});
+function applyFilter(){ let n=0; $$('.cert',grid).forEach(el=>{ const show=cur==='all'||el.dataset.c===cur; el.hidden=!show; if(show)n++; }); $('#count').textContent=`MENAMPILKAN ${n} / ${CERTS.length} SERTIFIKAT`; }
+applyFilter();
 
-        const sectionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                showSection(entry.target);
-                observer.unobserve(entry.target);
-            });
-        }, { threshold: 0.12 });
+/* ===== MODAL ===== */
+const modal=$('#modal'), mPrev=$('#mPrev');
+function baseOpen(){ lastFocus=document.activeElement; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; $('#mClose').focus(); }
+function closeModal(){ if(!modal.classList.contains('open')) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); mPrev.innerHTML=''; document.body.style.overflow=''; lastFocus&&lastFocus.focus(); }
+function fill({kind,title,rows,note}){ $('#mKind').textContent='// '+kind; $('#mTitle').textContent=title; const dl=$('#mDl'); dl.innerHTML=''; rows.forEach(([k,v])=>{ const d=document.createElement('div'); const dt=document.createElement('dt'); dt.textContent=k; const dd=document.createElement('dd'); dd.textContent=v; d.append(dt,dd); dl.appendChild(d); }); $('#mNote').textContent=note||''; }
+function placeholder(big,color,msg){ mPrev.style.setProperty('--c',color); mPrev.innerHTML=`<div class="noprev"><b></b><span></span></div>`; $('b',mPrev).textContent=big; $('span',mPrev).textContent=msg; }
+function openCert(c){
+  fill({kind:'CERTIFICATE', title:c.t, rows:[['PENERBIT',c.p],['TANGGAL TERBIT',c.d],['ID SERTIFIKAT',c.id],['KATEGORI',CAT_LABEL[c.c]]], note:c.file?'':'Berkas sertifikat belum ditambahkan.'});
+  const open=$('#mOpen');
+  if(c.file){ open.href=c.file; open.removeAttribute('aria-disabled'); open.style.display=''; const pdf=/\.pdf(\?|#|$)/i.test(c.file); mPrev.innerHTML=''; if(pdf){ const f=document.createElement('iframe'); f.src=c.file; f.title='Preview '+c.t; mPrev.appendChild(f);} else { const i=document.createElement('img'); i.src=c.file; i.alt='Preview '+c.t; mPrev.appendChild(i);} }
+  else { open.removeAttribute('href'); open.setAttribute('aria-disabled','true'); open.style.display=''; open.style.opacity='.45'; open.style.pointerEvents='none'; placeholder(c.id, getComputedStyle(document.querySelector('.t-'+c.c)).getPropertyValue('--c'), 'Preview belum tersedia'); }
+  if(c.file){ open.style.opacity=''; open.style.pointerEvents=''; }
+  baseOpen();
+}
+function openModal(o){ fill({kind:o.kind,title:o.title,rows:o.rows,note:o.note}); const open=$('#mOpen'); open.style.display='none'; placeholder(o.big,o.color,'Detail proyek'); baseOpen(); }
+$('#mClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+addEventListener('keydown',e=>{
+  if(!modal.classList.contains('open')) return;
+  if(e.key==='Escape') closeModal();
+  if(e.key==='Tab'){ const f=$$('button,a[href],iframe',modal).filter(x=>x.offsetParent!==null); if(!f.length) return; const a=f[0], z=f[f.length-1]; if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();} }
+});
 
-        sections.forEach((section) => sectionObserver.observe(section));
+/* ===== CONTACT (localStorage) ===== */
+const KEY='fn_portfolio_messages'; const fn=$('#fname'), fm=$('#fmsg'), st=$('#fstatus'), list=$('#msgList');
+const load=()=>{ try{ return JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ return []; } };
+const save=a=>{ try{ localStorage.setItem(KEY,JSON.stringify(a)); return true; }catch(e){ return false; } };
+fn.addEventListener('input',()=>$('#nameN').textContent=fn.value.length+'/40');
+fm.addEventListener('input',()=>$('#msgN').textContent=fm.value.length+'/240');
+function render(){
+  const a=load(); list.innerHTML='';
+  if(!a.length){ list.innerHTML='<p class="empty">Belum ada pesan tersimpan di perangkat ini.</p>'; return; }
+  a.slice().reverse().forEach(m=>{ const d=document.createElement('div'); d.className='msg'; d.innerHTML='<span class="who"></span><span class="when"></span><p></p><button type="button" aria-label="Hapus pesan ini">✕</button>'; $('.who',d).textContent=m.n; $('.when',d).textContent=new Date(m.t).toLocaleString('id-ID',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}); $('p',d).textContent=m.m; $('button',d).addEventListener('click',()=>{ save(load().filter(x=>x.t!==m.t)); render(); st.className='fstatus'; st.textContent='Pesan dihapus dari perangkat ini.'; }); list.appendChild(d); });
+}
+$('#form').addEventListener('submit',e=>{
+  e.preventDefault(); const n=fn.value.trim(), m=fm.value.trim();
+  if(!n||!m){ st.className='fstatus err'; st.textContent='Isi nama dan pesan terlebih dahulu.'; (n?fm:fn).focus(); return; }
+  const a=load(); a.push({n,m,t:Date.now()});
+  if(save(a)){ st.className='fstatus'; st.textContent='Pesan disimpan di browser ini.'; fn.value=''; fm.value=''; $('#nameN').textContent='0/40'; $('#msgN').textContent='0/240'; render(); }
+  else { st.className='fstatus err'; st.textContent='Penyimpanan browser tidak tersedia, pesan tidak disimpan.'; }
+});
+$('#clearAll').addEventListener('click',()=>{ if(!load().length){ st.className='fstatus'; st.textContent='Tidak ada pesan untuk dihapus.'; return; } if(confirm('Hapus semua pesan yang tersimpan di browser ini?')){ save([]); render(); st.className='fstatus'; st.textContent='Semua pesan dihapus.'; } });
+render(); observeReveal();
 
-        function revealVisibleSections() {
-            sections.forEach((section) => {
-                const bounds = section.getBoundingClientRect();
-                if (bounds.top < window.innerHeight * .88 && bounds.bottom > 0) {
-                    showSection(section);
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealVisibleSections, { passive: true });
-        revealVisibleSections();
-
-        /* ---------- Katakana rain background ---------- */
-        (function () {
-            const canvas = document.getElementById('katakana-canvas');
-            const context = canvas.getContext('2d');
-            if (!context) return;
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-            const characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            let drops = [];
-            let animationId;
-            let lastFrame = 0;
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                drops = Array.from({ length: Math.ceil(canvas.width / 24) }, () => ({
-                    y: Math.random() * canvas.height / 18,
-                    speed: .3 + Math.random() * .8,
-                    opacity: .16 + Math.random() * .26
-                }));
-            }
-
-            function draw(timestamp) {
-                animationId = window.requestAnimationFrame(draw);
-                if (document.hidden || timestamp - lastFrame < 45) return;
-                lastFrame = timestamp;
-
-                context.fillStyle = 'rgba(17, 18, 27, 0.12)';
-                context.fillRect(0, 0, canvas.width, canvas.height);
-                context.font = '13px "Noto Sans JP", sans-serif';
-
-                drops.forEach((drop, index) => {
-                    const highlight = Math.random() > .985;
-                    context.fillStyle = highlight
-                        ? `rgba(242, 118, 141, ${drop.opacity + .2})`
-                        : `rgba(166, 217, 202, ${drop.opacity})`;
-                    context.shadowColor = highlight ? '#f2768d' : '#a6d9ca';
-                    context.shadowBlur = highlight ? 9 : 4;
-                    context.fillText(characters[Math.floor(Math.random() * characters.length)], index * 24, drop.y * 18);
-
-                    if (drop.y * 18 > canvas.height && Math.random() > .975) drop.y = 0;
-                    drop.y += drop.speed;
-                });
-            }
-
-            resize();
-            window.addEventListener('resize', resize);
-            animationId = window.requestAnimationFrame(draw);
-            window.addEventListener('pagehide', () => {
-                window.cancelAnimationFrame(animationId);
-                window.removeEventListener('resize', resize);
-            }, { once: true });
-        })();
-
-        /* ---------- Falling stars for the About section ---------- */
-        const starfield = document.querySelector('.about-starfield');
-        for (let index = 0; index < 34; index += 1) {
-            const star = document.createElement('span');
-            star.className = 'falling-star';
-            star.style.setProperty('--star-x', `${Math.random() * 100}%`);
-            star.style.setProperty('--star-delay', `${Math.random() * 8}s`);
-            star.style.setProperty('--star-duration', `${5 + Math.random() * 7}s`);
-            star.style.setProperty('--star-size', `${1 + Math.random() * 2.5}px`);
-            starfield.appendChild(star);
-        }
-
-        /* ---------- Opening transition ---------- */
-        window.addEventListener('load', () => {
-            window.setTimeout(() => {
-                document.body.classList.add('intro-closing');
-                window.setTimeout(() => {
-                    const intro = document.querySelector('.site-intro');
-                    intro.style.opacity = '0';
-                    intro.style.visibility = 'hidden';
-                }, 850);
-            }, 1200);
-        }, { once: true });
-
-        const screenShell = document.getElementById('screenShell');
-        const screenLinks = [...document.querySelectorAll('.navlinks [data-screen]')];
-        const screenForTarget = {
-            beranda: 'home', tentang: 'about', skills: 'skills', proyek: 'projects',
-            sertifikat: 'projects', contact: 'contact'
-        };
-
-        function activateScreen(screen, targetId, updateHistory = true) {
-            if (!screenShell || !screen) return;
-            document.body.dataset.activeScreen = screen;
-            screenLinks.forEach((link) => {
-                const active = link.dataset.screen === screen;
-                link.classList.toggle('active', active);
-                if (active) link.setAttribute('aria-current', 'page');
-                else link.removeAttribute('aria-current');
-            });
-
-            const target = targetId && document.getElementById(targetId);
-            const targetTop = target
-                ? target.getBoundingClientRect().top - screenShell.getBoundingClientRect().top + screenShell.scrollTop
-                : 0;
-            screenShell.scrollTop = targetTop;
-            if (updateHistory && targetId) history.pushState({ screen }, '', `#${targetId}`);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach((link) => {
-            link.addEventListener('click', (event) => {
-                const targetId = link.getAttribute('href').slice(1);
-                const screen = screenForTarget[targetId];
-                if (!screen) return;
-                event.preventDefault();
-                activateScreen(screen, targetId);
-            });
-        });
-
-        window.addEventListener('popstate', () => {
-            const targetId = window.location.hash.slice(1) || 'beranda';
-            activateScreen(screenForTarget[targetId] || 'home', targetId, false);
-        });
-
-        const clock = document.getElementById('systemClock');
-        function updateClock() {
-            if (clock) clock.textContent = new Intl.DateTimeFormat('ja-JP', {
-                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-            }).format(new Date());
-        }
-        updateClock();
-        window.setInterval(updateClock, 1000);
-
-        const initialTarget = window.location.hash.slice(1) || 'beranda';
-        activateScreen(screenForTarget[initialTarget] || 'home', initialTarget, false);
-
-        /* ---------- 3D tilt effect for cards ---------- */
-        function attachTilt(selector, strength = 8) {
-            document.querySelectorAll(selector).forEach(el => {
-                el.addEventListener('mousemove', (e) => {
-                    const r = el.getBoundingClientRect();
-                    const x = (e.clientX - r.left) / r.width - 0.5;
-                    const y = (e.clientY - r.top) / r.height - 0.5;
-                    el.style.transform = `rotateY(${x * strength}deg) rotateX(${-y * strength}deg) translateZ(0)`;
-                });
-                el.addEventListener('mouseleave', () => { el.style.transform = 'rotateY(0deg) rotateX(0deg)'; });
-            });
-        }
-        attachTilt('[data-tilt]', 8);
-
-        /* Remove only edge-connected white pixels, preserving white details inside the character. */
-        (function () {
-            const character = document.querySelector('.char-body');
-            if (!character) return;
-
-            character.addEventListener('load', () => {
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d', { willReadFrequently: true });
-                canvas.width = character.naturalWidth;
-                canvas.height = character.naturalHeight;
-                context.drawImage(character, 0, 0);
-
-                const image = context.getImageData(0, 0, canvas.width, canvas.height);
-                const pixels = image.data;
-                const visited = new Uint8Array(canvas.width * canvas.height);
-                const queue = [];
-                const isBackground = (index) => {
-                    const red = pixels[index];
-                    const green = pixels[index + 1];
-                    const blue = pixels[index + 2];
-                    return red > 238 && green > 238 && blue > 238;
-                };
-
-                for (let x = 0; x < canvas.width; x++) {
-                    queue.push([x, 0], [x, canvas.height - 1]);
-                }
-                for (let y = 1; y < canvas.height - 1; y++) {
-                    queue.push([0, y], [canvas.width - 1, y]);
-                }
-
-                while (queue.length) {
-                    const [x, y] = queue.pop();
-                    if (x < 0 || y < 0 || x >= canvas.width || y >= canvas.height) continue;
-                    const position = y * canvas.width + x;
-                    if (visited[position]) continue;
-                    visited[position] = 1;
-                    const pixelIndex = position * 4;
-                    if (!isBackground(pixelIndex)) continue;
-                    pixels[pixelIndex + 3] = 0;
-                    queue.push([x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]);
-                }
-
-                context.putImageData(image, 0, 0);
-                character.src = canvas.toDataURL('image/png');
-            }, { once: true });
-
-            if (character.complete) character.dispatchEvent(new Event('load'));
-        })();
-
-        /* ============ THREE.JS HERO SCENE ============ */
-        (function () {
-            const canvas = document.getElementById('hero-canvas');
-            const heroSection = document.querySelector('.hero');
-            if (!canvas || !heroSection || !window.THREE) return;
-            let width = heroSection.clientWidth || window.innerWidth;
-            let height = heroSection.clientHeight || Math.max(window.innerHeight - 100, 1);
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(52, width / height, 0.1, 1000);
-            camera.position.set(0, 0, 30);
-
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-            renderer.setSize(width, height);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            const group = new THREE.Group();
-            scene.add(group);
-
-            const sakuraPink = 0xf28ca3;
-            const petalCream = 0xffd9c7;
-            const toriiRed = 0xb84d5b;
-            const inkPurple = 0x30223b;
-
-            /* A quiet depth plane keeps the landscape scene atmospheric. */
-            const halo = new THREE.Mesh(
-                new THREE.PlaneGeometry(42, 28),
-                new THREE.MeshBasicMaterial({ color: 0x493143, transparent: true, opacity: 0.14 })
-            );
-            halo.position.z = -9;
-            group.add(halo);
-
-            const stars = new THREE.Group();
-            const starGeometry = new THREE.BufferGeometry();
-            const starPositions = [];
-            for (let i = 0; i < 180; i++) {
-                starPositions.push(
-                    (Math.random() - 0.5) * 44,
-                    (Math.random() - 0.5) * 28,
-                    (Math.random() - 0.5) * 18
-                );
-            }
-            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
-            stars.add(new THREE.Points(starGeometry, new THREE.PointsMaterial({
-                color: petalCream,
-                size: 0.075,
-                transparent: true,
-                opacity: 0.72,
-                sizeAttenuation: true
-            })));
-            stars.position.z = -3;
-            group.add(stars);
-
-            const torii = new THREE.Group();
-            const toriiMaterial = new THREE.MeshBasicMaterial({ color: toriiRed });
-            const toriiShadowMaterial = new THREE.MeshBasicMaterial({ color: inkPurple });
-            const postGeometry = new THREE.BoxGeometry(0.32, 5.8, 0.42);
-            const topBeamGeometry = new THREE.BoxGeometry(8.2, 0.42, 0.72);
-            const lowerBeamGeometry = new THREE.BoxGeometry(6.6, 0.24, 0.5);
-            const postLeft = new THREE.Mesh(postGeometry, toriiMaterial);
-            const postRight = new THREE.Mesh(postGeometry, toriiMaterial);
-            postLeft.position.set(-3.1, -1.1, 0);
-            postRight.position.set(3.1, -1.1, 0);
-            const topBeam = new THREE.Mesh(topBeamGeometry, toriiMaterial);
-            topBeam.position.set(0, 2.05, 0);
-            const roofBeam = new THREE.Mesh(new THREE.BoxGeometry(8.8, 0.2, 0.9), toriiShadowMaterial);
-            roofBeam.position.set(0, 2.36, 0);
-            const lowerBeam = new THREE.Mesh(lowerBeamGeometry, toriiMaterial);
-            lowerBeam.position.set(0, 1.05, 0);
-            torii.add(postLeft, postRight, topBeam, roofBeam, lowerBeam);
-            torii.position.set(0, -2.1, -5.5);
-            group.add(torii);
-
-            const petalShape = new THREE.Shape();
-            petalShape.moveTo(0, 0);
-            petalShape.bezierCurveTo(-0.13, 0.12, -0.13, 0.29, 0, 0.34);
-            petalShape.bezierCurveTo(0.13, 0.29, 0.13, 0.12, 0, 0);
-            const petalGeometry = new THREE.ShapeGeometry(petalShape, 8);
-            const petalMaterials = [sakuraPink, petalCream, 0xd87891].map((color) => new THREE.MeshBasicMaterial({
-                color,
-                side: THREE.DoubleSide,
-                transparent: true,
-                opacity: 0.86,
-                depthWrite: false
-            }));
-            const petals = [];
-
-            for (let index = 0; index < 34; index += 1) {
-                const petal = new THREE.Mesh(petalGeometry, petalMaterials[index % petalMaterials.length]);
-                petal.position.set((Math.random() - 0.5) * 34, (Math.random() - 0.5) * 22, (Math.random() - 0.5) * 12);
-                petal.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
-                petal.userData = {
-                    fallSpeed: 0.012 + Math.random() * 0.018,
-                    sway: 0.006 + Math.random() * 0.01,
-                    phase: Math.random() * Math.PI * 2,
-                    spin: (Math.random() - 0.5) * 0.018
-                };
-                petals.push(petal);
-                group.add(petal);
-            }
-
-            group.position.set(width > 860 ? 13 : 0, 1, 0);
-
-            let mouseX = 0, mouseY = 0;
-            let targetX = 0, targetY = 0;
-            window.addEventListener('mousemove', (e) => {
-                targetX = (e.clientX / window.innerWidth - 0.5);
-                targetY = (e.clientY / window.innerHeight - 0.5);
-            });
-
-            function onResize() {
-                const nextWidth = heroSection.clientWidth;
-                const nextHeight = heroSection.clientHeight;
-                if (!nextWidth || !nextHeight) return;
-                width = nextWidth;
-                height = nextHeight;
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-                group.position.x = width > 860 ? 13 : 0;
-                renderer.render(scene, camera);
-            }
-            window.addEventListener('resize', onResize);
-            if ('ResizeObserver' in window) new ResizeObserver(onResize).observe(heroSection);
-
-            let t = 0;
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            function animate() {
-                if (document.hidden) return;
-                t += 0.0032;
-                mouseX += (targetX - mouseX) * 0.035;
-                mouseY += (targetY - mouseY) * 0.035;
-                group.rotation.y = t * 0.12 + mouseX * 0.12;
-                group.rotation.x = Math.sin(t * 0.45) * 0.025 + mouseY * 0.055;
-                stars.rotation.y = -t * 0.08;
-                petals.forEach((petal) => {
-                    petal.position.y -= petal.userData.fallSpeed;
-                    petal.position.x += Math.sin(t * 1.2 + petal.userData.phase) * petal.userData.sway;
-                    petal.rotation.x += petal.userData.spin;
-                    petal.rotation.y += petal.userData.spin * 0.7;
-                    if (petal.position.y < -11) {
-                        petal.position.y = 11;
-                        petal.position.x = (Math.random() - 0.5) * 34;
-                    }
-                });
-                halo.material.opacity = 0.12 + Math.sin(t * 1.5) * 0.025;
-                renderer.render(scene, camera);
-                if (!reduceMotion) requestAnimationFrame(animate);
-            }
-            animate();
-            document.addEventListener('visibilitychange', () => {
-                if (!document.hidden && !reduceMotion) requestAnimationFrame(animate);
-            });
-        })();
-
-        (function () {
-            const stage = document.getElementById('heroStage');
-            const artLayer = document.getElementById('heroArtLayer');
-            if (!stage || !artLayer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-            stage.addEventListener('pointermove', (event) => {
-                const bounds = stage.getBoundingClientRect();
-                const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-                const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-                artLayer.style.setProperty('--tilt-y', `${x * 12}deg`);
-                artLayer.style.setProperty('--tilt-x', `${-y * 9}deg`);
-            });
-
-            stage.addEventListener('pointerleave', () => {
-                artLayer.style.setProperty('--tilt-y', '0deg');
-                artLayer.style.setProperty('--tilt-x', '0deg');
-            });
-        })();
-    </script>
+/* ===== THREE.JS ===== */
+(function(){
+  if(typeof THREE==='undefined') return;
+  const cv=$('#three'), hero=$('#home');
+  let renderer; try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); }catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+  const scene=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(55,1,.1,200); cam.position.set(0,1.2,14);
+  // stars
+  const N=380, sp=new Float32Array(N*3); for(let i=0;i<N;i++){ sp[i*3]=(Math.random()-.5)*90; sp[i*3+1]=Math.random()*30-2; sp[i*3+2]=-Math.random()*60-6; }
+  const sg=new THREE.BufferGeometry(); sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
+  const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xbfe9ff,size:.16,transparent:true,opacity:.8})); scene.add(stars);
+  // torii
+  const torii=new THREE.Group(); const red=new THREE.MeshBasicMaterial({color:0xff2d78,transparent:true,opacity:.55});
+  const box=(w,h,d,x,y)=>{ const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),red); m.position.set(x,y,0); torii.add(m); return m; };
+  box(.5,7,.5,-3,3.5); box(.5,7,.5,3,3.5); box(9,.55,.7,0,7.2); box(7.2,.35,.5,0,6.1); box(.35,1.1,.4,0,6.6);
+  const edges=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(9,.55,.7)),new THREE.LineBasicMaterial({color:0x00e5ff})); edges.position.set(0,7.2,0); torii.add(edges);
+  torii.position.set(6.5,-5.5,-14); torii.scale.setScalar(1.15); scene.add(torii);
+  // petals
+  const P=60, pp=new Float32Array(P*3), pv=[]; for(let i=0;i<P;i++){ pp[i*3]=(Math.random()-.5)*30; pp[i*3+1]=Math.random()*18-6; pp[i*3+2]=-Math.random()*16; pv.push({s:.25+Math.random()*.4,d:Math.random()*6.28,sw:.3+Math.random()*.6}); }
+  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
+  const petals=new THREE.Points(pg,new THREE.PointsMaterial({color:0xff9fc4,size:.32,transparent:true,opacity:.75})); scene.add(petals);
+  function size(){ const w=hero.clientWidth,h=hero.clientHeight; renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
+  size(); addEventListener('resize',size);
+  let mx=0,my=0,tx=0,ty=0; if(!reduce) hero.addEventListener('pointermove',e=>{ const r=hero.getBoundingClientRect(); tx=(e.clientX-r.left)/r.width-.5; ty=(e.clientY-r.top)/r.height-.5; });
+  hero.addEventListener('pointerleave',()=>{tx=0;ty=0;});
+  let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(hero);
+  const clock=new THREE.Clock();
+  function frame(){
+    if(!reduce) requestAnimationFrame(frame); if(!vis && !reduce) return;
+    const t=clock.getElapsedTime(); mx+=(tx-mx)*.05; my+=(ty-my)*.05;
+    cam.position.x=mx*2.2; cam.position.y=1.2-my*1.2; cam.lookAt(0,2,0);
+    stars.rotation.y=t*.004; stars.material.opacity=.65+Math.sin(t*1.3)*.15;
+    const a=pg.attributes.position; for(let i=0;i<P;i++){ a.array[i*3+1]-=pv[i].s*.012; a.array[i*3]+=Math.sin(t*pv[i].sw+pv[i].d)*.004; if(a.array[i*3+1]<-7){ a.array[i*3+1]=12; } } a.needsUpdate=true;
+    renderer.render(scene,cam);
+  }
+  frame();
+})();
+})();
+</script>
 </body>
-
 </html>
