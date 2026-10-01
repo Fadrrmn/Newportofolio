@@ -8,22 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<style>html,body{background:#05070d;color:#e9e7f5}</style>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- INTRO -->
 <div id="intro" role="status" aria-live="polite">
-  <span class="corner tl">35°41′N · 139°41′E</span><span class="corner tr">● ONLINE</span>
-  <span class="corner bl">SHINJUKU-KU · 新宿区</span><span class="corner br">FN_PORTFOLIO_v2.0</span>
-  <div class="intro-in">
-    <div class="intro-k">TOKYO NIGHT // PORTFOLIO</div>
-    <div class="intro-name">FADHLURRAHMAN</div>
+  <span class="corner tl">HANGAR_01 · SECTOR FN</span><span class="corner tr">● ONLINE</span>
+  <span class="corner bl">MS_LINK · 機動戦士</span><span class="corner br">FN_PORTFOLIO_v2.0</span>
+  <canvas id="bolt" aria-hidden="true"></canvas><div class="flash" id="flash" aria-hidden="true"></div>
+  <div class="intro-in" id="introIn">
+    <div class="intro-k">MOBILE SUIT // PORTFOLIO</div>
+    <div class="intro-name" id="introName">FADHLURRAHMAN</div>
     <div class="intro-name2">NAUFAL</div>
-    <div class="intro-sub">SHINJUKU AFTER DARK // CREATIVE CODE</div>
-    <div class="intro-jp" lang="ja">ポートフォリオを読み込んでいます</div>
+    <div class="intro-sub">GUNDAM OS // CREATIVE CODE</div>
+    <div class="intro-jp" lang="ja">モビルスーツ起動中 · SISTEM BOOT</div>
+    <div class="intro-thx" lang="ja">雷の呼吸 · 壱ノ型 霹靂一閃</div>
     <div class="term" aria-hidden="true">
-      <div class="dots"><span style="background:var(--pink)"></span><span style="background:var(--amber)"></span><span style="background:var(--green)"></span><small style="color:#21909f"> tokyo-net :: terminal</small></div>
+      <div class="dots"><span style="background:var(--pink)"></span><span style="background:var(--amber)"></span><span style="background:var(--green)"></span><small style="color:#21909f"> ms-os :: terminal</small></div>
       <div id="termLines"></div>
     </div>
     <div class="bar"><div class="bar-h"><span>LOADING ASSETS</span><span id="pct">0%</span></div><div class="bar-t"><div class="bar-f" id="barF"></div></div></div>
@@ -59,9 +62,9 @@
   <canvas id="three" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div>
-      <div class="status">STATUS :: ONLINE <i lang="ja">| こんにちは</i></div>
+      <div class="status">PILOT :: ONLINE <i lang="ja">| 出撃準備完了</i></div>
       <p class="greet" lang="ja">ようこそ · SELAMAT DATANG</p>
-      <h1 class="name"><span class="a">Fadhlurrahman</span><span class="b">Naufal</span></h1>
+      <h1 class="name"><span class="a">MY</span><span class="b">PORTOFOLIO</span></h1>
       <div class="role">MAHASISWA IT <span>/ IT STUDENT</span></div>
       <p class="lead">Mahasiswa Teknologi Rekayasa Komputer yang tertarik pada software, jaringan, IoT, dan cybersecurity.</p>
       <p class="tag">"Building the future, one line at a time."</p>
@@ -69,16 +72,16 @@
         <a class="btn pri" href="#projects">LIHAT PROYEK</a>
         <a class="btn" href="#contact">KONTAK SAYA</a>
       </div>
-      <p class="loc">TOKYO · SHINJUKU / 35°41′N <span>· Pekanbaru, Indonesia</span></p>
+      <p class="loc">HANGAR_01 · SECTOR FN <span>· Pekanbaru, Indonesia</span></p>
     </div>
     <div class="char-wrap" id="charWrap">
       <div class="char" id="char">
-        <img src="img/character-transparent.png" alt="Ilustrasi karakter anime bergaya cyberpunk" id="charImg">
+        <img src="img/character-transparent.png" alt="Ilustrasi mobile suit Gundam bergaya cyberpunk" id="charImg">
         <svg id="charFb" viewBox="0 0 200 300" hidden role="img" aria-label="Siluet karakter cyberpunk"><g fill="#160c2c" stroke="#ff2d78" stroke-width="2"><ellipse cx="100" cy="50" rx="34" ry="38"/><path d="M62 96h76l14 90-14 4v92h-28v-80h-20v80H62v-92l-14-4z"/></g><g fill="#00e5ff"><circle cx="88" cy="52" r="4"/><circle cx="112" cy="52" r="4"/></g><rect x="86" y="120" width="28" height="18" fill="none" stroke="#00e5ff"/></svg>
       </div>
       <i class="brk t"></i><i class="brk b"></i>
-      <span class="tagline" style="top:10px;left:0">ID_CHAR_001</span>
-      <span class="tagline" style="bottom:10px;right:0">PIX_0140 / TKY_2032</span>
+      <span class="tagline" style="top:10px;left:0">MS_UNIT_01</span>
+      <span class="tagline" style="bottom:10px;right:0">SYNC :: STABLE</span>
     </div>
   </div>
   <div class="scroll" aria-hidden="true">SCROLL</div>
@@ -88,7 +91,7 @@
 <section id="about" class="sec">
   <div class="shoot" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <div class="sec-h reveal"><div class="k">// 01 · 概要</div><h2>SIAPA SAYA? <small lang="ja">自己紹介</small></h2></div>
+    <div class="sec-h reveal"><div class="k">// 01 · 概要</div><h2>WHO ME? <small lang="ja">自己紹介</small></h2></div>
     <div class="about">
       <div class="photo reveal"><div class="fb" aria-hidden="true"></div><img src="img/foto.png" alt="Foto profil Fadhlurrahman Naufal Nugraha" id="fotoImg"></div>
       <div class="reveal">
@@ -118,35 +121,24 @@
       <div class="panel reveal">
         <div class="ph" style="color:var(--cyan)"><span><b style="background:var(--cyan)"></b>WEB &amp; SOFTWARE</span></div>
         <ul class="sk-list">
-            <li style="--c:#ff7a2f"><span class="skill-label">HTML</span><span class="skill-percent">85%</span><progress value="85" max="100" aria-label="HTML 85%">85%</progress></li>
-            <li style="--c:var(--cyan)"><span class="skill-label">CSS</span><span class="skill-percent">80%</span><progress value="80" max="100" aria-label="CSS 80%">80%</progress></li>
-            <li style="--c:var(--amber)"><span class="skill-label">JavaScript</span><span class="skill-percent">75%</span><progress value="75" max="100" aria-label="JavaScript 75%">75%</progress></li>
-            <li style="--c:#8f8cb8"><span class="skill-label">PHP</span><span class="skill-percent">65%</span><progress value="65" max="100" aria-label="PHP 65%">65%</progress></li>
-            <li style="--c:#ff9a2f"><span class="skill-label">Java</span><span class="skill-percent">65%</span><progress value="65" max="100" aria-label="Java 65%">65%</progress></li>
-            <li style="--c:#9b6bff"><span class="skill-label">Kotlin</span><span class="skill-percent">62%</span><progress value="62" max="100" aria-label="Kotlin 62%">62%</progress></li>
-            <li style="--c:#2d7dff"><span class="skill-label">C / C++</span><span class="skill-percent">72%</span><progress value="72" max="100" aria-label="C / C++ 72%">72%</progress></li>
-            <li style="--c:var(--green)"><span class="skill-label">Python</span><span class="skill-percent">68%</span><progress value="68" max="100" aria-label="Python 68%">68%</progress></li>
-            <li style="--c:var(--pink)"><span class="skill-label">MySQL</span><span class="skill-percent">76%</span><progress value="76" max="100" aria-label="MySQL 76%">76%</progress></li>
+          <li style="--c:#ff7a2f">HTML</li><li style="--c:var(--cyan)">CSS</li><li style="--c:var(--amber)">JavaScript</li><li style="--c:#8f8cb8">PHP</li><li style="--c:#ff9a2f">Java</li><li style="--c:#9b6bff">Kotlin</li><li style="--c:#2d7dff">C / C++</li><li style="--c:var(--green)">Python</li><li style="--c:var(--pink)">MySQL</li>
         </ul>
       </div>
       <div class="stack">
         <div class="panel reveal">
           <div class="ph" style="color:var(--pink)"><span><b style="background:var(--pink)"></b>INFRASTRUCTURE</span></div>
           <ul class="sk-list two">
-              <li style="--c:var(--pink)"><span class="skill-label">Git &amp; GitHub</span><span class="skill-percent">75%</span><progress value="75" max="100" aria-label="Git and GitHub 75%">75%</progress></li>
-              <li style="--c:var(--cyan)"><span class="skill-label">Networking</span><span class="skill-percent">72%</span><progress value="72" max="100" aria-label="Networking 72%">72%</progress></li>
-              <li style="--c:var(--green)"><span class="skill-label">IoT / ESP32</span><span class="skill-percent">68%</span><progress value="68" max="100" aria-label="IoT and ESP32 68%">68%</progress></li>
-              <li style="--c:var(--amber)"><span class="skill-label">Responsive Design</span><span class="skill-percent">78%</span><progress value="78" max="100" aria-label="Responsive Design 78%">78%</progress></li>
+            <li style="--c:var(--pink)">Git &amp; GitHub</li><li style="--c:var(--cyan)">Networking</li><li style="--c:var(--green)">IoT / ESP32</li><li style="--c:var(--amber)">Responsive Design</li>
           </ul>
         </div>
         <div class="panel reveal">
           <div class="ph" style="color:var(--green)"><span><b style="background:var(--green)"></b>DEVOPS LEARNING PATH</span><span class="learn">● LEARNING_MODE: ON</span></div>
           <ol class="path">
-            <li class="active"><span class="node" aria-hidden="true"></span><div><b>Linux <em lang="ja">リナックス</em><span class="badge">ACTIVE</span></b><p>Dasar command line &amp; administrasi sistem</p></div></li>
-            <li class="done"><span class="node" aria-hidden="true">✓</span><div><b>Networking <em lang="ja">ネットワーク</em></b><p>TCP/IP, routing, Cisco Packet Tracer</p></div></li>
-            <li class="next"><span class="node" aria-hidden="true">03</span><div><b>Cloud <em lang="ja">クラウド</em></b><p>AWS / GCP fundamental</p></div></li>
-            <li class="next"><span class="node" aria-hidden="true">04</span><div><b>CI/CD</b><p>Pipeline otomatisasi deployment</p></div></li>
-            <li class="next"><span class="node" aria-hidden="true">05</span><div><b>DevOps <em lang="ja">デブオプス</em></b><p>Docker, Kubernetes, Infrastructure as Code</p></div></li>
+            <li class="active"><span class="node" aria-hidden="true"></span><div><b>Linux <em lang="ja">リナックス</em><span class="badge">ACTIVE</span></b><p>Sedang dipelajari sekarang</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">02</span><div><b>Networking <em lang="ja">ネットワーク</em></b><p>Berikutnya</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">03</span><div><b>Cloud <em lang="ja">クラウド</em></b><p>Berikutnya</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">04</span><div><b>CI/CD</b><p>Berikutnya</p></div></li>
+            <li class="next"><span class="node" aria-hidden="true">05</span><div><b>DevOps <em lang="ja">デブオプス</em></b><p>Tujuan akhir</p></div></li>
           </ol>
         </div>
       </div>
@@ -250,19 +242,76 @@ const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ===== JAPANESE MATRIX RAIN ===== */
+(()=>{
+  const glyphs='アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン零壱弐参四五六七八九';
+  const rainSections=['about','skills','projects','certs','contact'].map(id=>document.getElementById(id));
+  const rains=rainSections.map(section=>{
+    const canvas=document.createElement('canvas');
+    canvas.className='jp-rain'; canvas.setAttribute('aria-hidden','true');
+    section.prepend(canvas);
+    const ctx=canvas.getContext('2d');
+    let width=0,height=0,drops=[];
+    function resize(){
+      const dpr=Math.min(devicePixelRatio||1,1.5);
+      width=section.clientWidth; height=section.clientHeight;
+      canvas.width=Math.ceil(width*dpr); canvas.height=Math.ceil(height*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const columns=Math.ceil(width/20);
+      drops=Array.from({length:columns},()=>Math.random()*height/18);
+    }
+    resize(); new ResizeObserver(resize).observe(section);
+    function draw(){
+      ctx.clearRect(0,0,width,height);
+      ctx.font='15px "Noto Sans JP", sans-serif';
+      drops.forEach((drop,column)=>{
+        const x=column*20, y=drop*18;
+        const tail=6+column%5;
+        for(let trail=0;trail<tail;trail++){
+          const charY=y-trail*18;
+          if(charY<0||charY>height) continue;
+          ctx.fillStyle=trail===0
+            ?(column%7===0?'rgba(0,229,255,.95)':'rgba(220,255,225,.88)')
+            :`rgba(57,255,20,${.62*(1-trail/tail)})`;
+          ctx.fillText(glyphs[Math.floor(Math.random()*glyphs.length)],x,charY);
+        }
+        if(y>height&&Math.random()>.975) drops[column]=0;
+        else drops[column]+=.025+Math.random()*.035;
+      });
+    }
+    return {canvas,draw};
+  });
+  if(reduce) return;
+  let visible=new Set(), frame=0;
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting) visible.add(entry.target);
+    else visible.delete(entry.target);
+    if(visible.size&&!frame) frame=requestAnimationFrame(tick);
+  }),{rootMargin:'100px 0px'});
+  rainSections.forEach(section=>observer.observe(section));
+  function tick(){
+    frame=0;
+    visible.forEach(section=>rains[rainSections.indexOf(section)].draw());
+    if(visible.size) frame=requestAnimationFrame(tick);
+  }
+})();
+
 /* ===== DATA (edit di sini) ===== */
-// Satu entri untuk setiap sertifikat PDF unik yang tersedia di folder sertifikat.
+// Isi `file` dengan path PDF/gambar asli (mis. "cert/dicoding-web.pdf") agar preview & tombol aktif.
 const CERTS = [
-  {t:'Belajar Dasar Pemrograman Web', p:'Dicoding Indonesia', d:'Agu 2023', id:'ERZR663Y', c:'web', file:'sertifikat/sertifikat-belajarpemrrogrammanweb.pdf'},
-  {t:'CCNA: Enterprise Networking, Security, and Automation', p:'Cisco Networking Academy', d:'—', id:'—', c:'net', file:'sertifikat/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_18b0b9fd-2d4d-459d-820d-b3cd7915ae1b.pdf'},
-  {t:'CCNA: Switching, Routing, and Wireless Essentials', p:'Cisco Networking Academy', d:'—', id:'—', c:'net', file:'sertifikat/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_74dfd7d0-ad68-48b9-b966-f5d50ea975ac.pdf'},
-  {t:'Introduction to Cybersecurity', p:'Cisco Networking Academy', d:'Sep 2023', id:'CISCO-IC', c:'cyber', file:'sertifikat/Introduction_to_Cybersecurity_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_e712844f-ce15-4f0e-8a4d-c7fc9102098c.pdf'},
-  {t:'Introduction to IoT', p:'Cisco Networking Academy', d:'Nov 2023', id:'CISCO-II', c:'net', file:'sertifikat/_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-IOT.pdf'},
-  {t:'Junior Cybersecurity Analyst Career Path', p:'Cisco Networking Academy', d:'—', id:'—', c:'cyber', file:'sertifikat/Junior_Cybersecurity_Analyst_Career_Path_certificate_fadhlurrahman24trk-mahasiswa-pcr-ac-id_0287f26e-3b82-42f2-ae6f-6a1b383de78e.pdf'},
-  {t:'Belajar Dasar AI', p:'Dicoding Indonesia', d:'—', id:'—', c:'ai', file:'sertifikat/sertifikat_DasarAi.pdf'},
+  {t:'Belajar Dasar Pemrograman Web', p:'Dicoding Indonesia', d:'Agu 2023', id:'ERZR663Y', c:'web', file:''},
+  {t:'Belajar Membuat Aplikasi Android untuk Pemula', p:'Dicoding Indonesia', d:'Okt 2023', id:'NVP7LM6O', c:'mobile', file:''},
+  {t:'Introduction to Cybersecurity', p:'Cisco Networking Academy', d:'Sep 2023', id:'CISCO-IC', c:'cyber', file:''},
+  {t:'Introduction to IoT', p:'Cisco Networking Academy', d:'Nov 2023', id:'CISCO-II', c:'net', file:''},
+  {t:'Belajar Dasar Git dengan GitHub', p:'Dicoding Indonesia', d:'Jul 2023', id:'KEXL57VY', c:'web', file:''},
+  {t:'Networking Basics', p:'Cisco Networking Academy', d:'Jan 2024', id:'CISCO-NB', c:'net', file:''},
+  {t:'Belajar Membuat Aplikasi Android Intermediate', p:'Dicoding Indonesia', d:'Mar 2024', id:'81P266KK', c:'mobile', file:''},
+  {t:'Introduction to Packet Tracer', p:'Cisco Networking Academy', d:'Des 2023', id:'CISCO-PT', c:'net', file:''},
+  {t:'Belajar JavaScript Dasar', p:'Dicoding Indonesia', d:'Feb 2024', id:'JLX3NR6R', c:'web', file:''},
+  {t:'AI For Everyone', p:'Dicoding Indonesia', d:'Apr 2024', id:'RVZK9NKG', c:'web', file:''},
 ];
-const CATS = [['all','Semua'],['web','Web Dev'],['cyber','Cybersecurity'],['net','Network & IoT'],['ai','AI']];
-const CAT_LABEL = {web:'WEB DEV', cyber:'CYBERSECURITY', net:'NETWORK & IOT', ai:'AI'};
+const CATS = [['all','Semua'],['web','Web Dev'],['mobile','Mobile'],['cyber','Cybersecurity'],['net','Network & IoT']];
+const CAT_LABEL = {web:'WEB DEV', mobile:'MOBILE', cyber:'CYBERSECURITY', net:'NETWORK & IOT'};
 
 const PROJECTS = [
   {n:'01', t:'Trash to Cash', ty:'Aplikasi Android', c:'var(--green)', ic:'♻',
@@ -284,10 +333,51 @@ const SOCIAL = [
 
 /* ===== INTRO ===== */
 const intro = $('#intro');
-const lines = ['> TOKYO_NET :: INITIALIZING... [OK]','> Connecting to SHINJUKU district... [OK]','> Loading FADHLURRAHMAN_NAUFAL.portfolio'];
+const lines = ['> MS_OS :: BOOT SEQUENCE... [OK]','> Sinkronisasi pilot FADHLURRAHMAN... [OK]','> Loading FADHLURRAHMAN_NAUFAL.portfolio'];
 let introDone = false;
 function endIntro(){ if(introDone) return; introDone = true; intro.classList.add('done'); document.body.style.overflow=''; setTimeout(()=>intro.remove(),800); }
 document.body.style.overflow='hidden';
+/* ===== EFEK PETIR (Zenitsu) ===== */
+if(!reduce){
+  const cv=$('#bolt'), cx=cv.getContext('2d'), fl=$('#flash'), nm=$('#introName'), inn=$('#introIn');
+  let W=0,H=0,strikes=[],streak=null;
+  const fit=()=>{ const d=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight; cv.width=W*d; cv.height=H*d; cx.setTransform(d,0,0,d,0,0); };
+  fit(); addEventListener('resize',fit);
+  const jag=(x1,y1,x2,y2,off,out)=>{ if(off<3){ out.push([x2,y2]); return; } const mx=(x1+x2)/2+(Math.random()-.5)*off, my=(y1+y2)/2+(Math.random()-.5)*off; jag(x1,y1,mx,my,off/2,out); jag(mx,my,x2,y2,off/2,out); };
+  function makeBolt(x){
+    const m=[[x,0]]; jag(x,0,x+(Math.random()-.5)*180,H*(.42+Math.random()*.3),130,m);
+    const br=[]; const step=Math.max(3,Math.ceil(m.length/5));
+    for(let i=3;i<m.length-2;i+=step){ if(Math.random()<.75){ const b=[m[i]]; jag(m[i][0],m[i][1],m[i][0]+(Math.random()-.5)*280,m[i][1]+90+Math.random()*150,55,b); br.push(b); } }
+    return {m,br,t:performance.now(),life:460};
+  }
+  function line(p,w,col,blur){ cx.beginPath(); p.forEach((q,i)=>i?cx.lineTo(q[0],q[1]):cx.moveTo(q[0],q[1])); cx.lineWidth=w; cx.strokeStyle=col; cx.shadowColor='#ffd400'; cx.shadowBlur=blur; cx.stroke(); }
+  function zap(big){
+    fl.className='flash'; void fl.offsetWidth; fl.classList.add(big?'big':'on');
+    nm.classList.add('zap'); setTimeout(()=>nm.classList.remove('zap'),160);
+    if(!big){ inn.classList.remove('shake'); void inn.offsetWidth; inn.classList.add('shake'); }
+  }
+  function strike(){ if(introDone) return; strikes.push(makeBolt(W*(.12+Math.random()*.76))); zap(false); }
+  function clap(){ // Thunderclap and Flash: sambaran zig-zag horizontal
+    if(introDone) return;
+    streak={t:performance.now(),dur:230,pts:[[-40,H*.56],[W*.22,H*.38],[W*.42,H*.64],[W*.68,H*.36],[W+40,H*.5]]};
+    zap(true);
+  }
+  function draw(now){
+    if(introDone) return; cx.clearRect(0,0,W,H); cx.lineJoin='round'; cx.lineCap='round';
+    strikes=strikes.filter(s=>now-s.t<s.life);
+    strikes.forEach(s=>{ const a=1-(now-s.t)/s.life, f=a>.6&&Math.floor(now/40)%2?.55:1;
+      line(s.m,7,`rgba(255,212,0,${.35*a*f})`,30); line(s.m,2.6,`rgba(255,250,200,${a*f})`,18);
+      s.br.forEach(b=>{ line(b,1.4,`rgba(255,235,120,${.85*a*f})`,12); }); });
+    if(streak){ const p=Math.min(1,(now-streak.t)/streak.dur), fade=Math.max(0,1-(now-streak.t-streak.dur)/260);
+      const total=streak.pts.length-1, seg=p*total, pts=[streak.pts[0]];
+      for(let i=1;i<=total;i++){ if(seg>=i) pts.push(streak.pts[i]); else { const f=seg-(i-1); if(f>0){ const a=streak.pts[i-1],b=streak.pts[i]; pts.push([a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f]); } break; } }
+      line(pts,14,`rgba(255,212,0,${.4*fade})`,40); line(pts,4,`rgba(255,255,230,${fade})`,24); }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  setTimeout(strike,380); setTimeout(strike,1050); setTimeout(strike,1600); setTimeout(clap,2080);
+}
+
 (function runIntro(){
   const box = $('#termLines'); const total = reduce ? 500 : 2400; const t0 = performance.now();
   lines.forEach((l,i)=>setTimeout(()=>{ if(introDone) return; $$('.ln',box).forEach(x=>x.classList.remove('cur')); const s=document.createElement('span'); s.className='ln cur'; s.textContent=l; box.appendChild(s); }, (reduce?0:i*650)));
@@ -314,7 +404,6 @@ const observeReveal = () => $$('.reveal:not(.in)').forEach(el=>rIO.observe(el));
 
 /* ===== IMAGES with fallback ===== */
 (function(){
-  const bg = new Image(); bg.onload=()=>$('#heroBg').classList.add('has-img'); bg.src='img/japan-dusk.png';
   const ch = $('#charImg'); ch.onerror=()=>{ ch.hidden=true; $('#charFb').hidden=false; };
   const ft = $('#fotoImg'); ft.onerror=()=>ft.remove();
 })();
@@ -410,37 +499,42 @@ render(); observeReveal();
   let renderer; try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); }catch(e){ return; }
   renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
   const scene=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(55,1,.1,200); cam.position.set(0,1.2,14);
-  // stars
-  const N=380, sp=new Float32Array(N*3); for(let i=0;i<N;i++){ sp[i*3]=(Math.random()-.5)*90; sp[i*3+1]=Math.random()*30-2; sp[i*3+2]=-Math.random()*60-6; }
+  // bintang
+  const N=380, sp=new Float32Array(N*3); for(let i=0;i<N;i++){ sp[i*3]=(Math.random()-.5)*90; sp[i*3+1]=Math.random()*34-8; sp[i*3+2]=-Math.random()*60-6; }
   const sg=new THREE.BufferGeometry(); sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
-  const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xbfe9ff,size:.16,transparent:true,opacity:.8})); scene.add(stars);
-  // torii
-  const torii=new THREE.Group(); const red=new THREE.MeshBasicMaterial({color:0xff2d78,transparent:true,opacity:.55});
-  const box=(w,h,d,x,y)=>{ const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),red); m.position.set(x,y,0); torii.add(m); return m; };
-  box(.5,7,.5,-3,3.5); box(.5,7,.5,3,3.5); box(9,.55,.7,0,7.2); box(7.2,.35,.5,0,6.1); box(.35,1.1,.4,0,6.6);
-  const edges=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(9,.55,.7)),new THREE.LineBasicMaterial({color:0x00e5ff})); edges.position.set(0,7.2,0); torii.add(edges);
-  torii.position.set(6.5,-5.5,-14); torii.scale.setScalar(1.15); scene.add(torii);
-  // petals
-  const P=60, pp=new Float32Array(P*3), pv=[]; for(let i=0;i<P;i++){ pp[i*3]=(Math.random()-.5)*30; pp[i*3+1]=Math.random()*18-6; pp[i*3+2]=-Math.random()*16; pv.push({s:.25+Math.random()*.4,d:Math.random()*6.28,sw:.3+Math.random()*.6}); }
-  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
-  const petals=new THREE.Points(pg,new THREE.PointsMaterial({color:0xff9fc4,size:.32,transparent:true,opacity:.75})); scene.add(petals);
+  const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xcfe6ff,size:.16,transparent:true,opacity:.8})); scene.add(stars);
+  // cincin koloni (wireframe)
+  const colony=new THREE.Group();
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(9,.18,8,72),new THREE.MeshBasicMaterial({color:0x2f6bff,wireframe:true,transparent:true,opacity:.55}));
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(6.2,.1,6,60),new THREE.MeshBasicMaterial({color:0x00e5ff,wireframe:true,transparent:true,opacity:.4}));
+  colony.add(ring,ring2); colony.position.set(7,3,-18); colony.rotation.x=1.1; scene.add(colony);
+  // serpihan melayang (biru + merah)
+  function debris(count,color,size){
+    const pos=new Float32Array(count*3), vel=[]; for(let i=0;i<count;i++){ pos[i*3]=(Math.random()-.5)*34; pos[i*3+1]=Math.random()*20-7; pos[i*3+2]=-Math.random()*16; vel.push({s:.2+Math.random()*.5,d:Math.random()*6.28}); }
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    const p=new THREE.Points(g,new THREE.PointsMaterial({color,size,transparent:true,opacity:.8})); scene.add(p); return {g,vel,count};
+  }
+  const dBlue=debris(46,0x6ea8ff,.24), dRed=debris(18,0xff5a5a,.2);
   function size(){ const w=hero.clientWidth,h=hero.clientHeight; renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
   size(); addEventListener('resize',size);
   let mx=0,my=0,tx=0,ty=0; if(!reduce) hero.addEventListener('pointermove',e=>{ const r=hero.getBoundingClientRect(); tx=(e.clientX-r.left)/r.width-.5; ty=(e.clientY-r.top)/r.height-.5; });
   hero.addEventListener('pointerleave',()=>{tx=0;ty=0;});
   let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(hero);
   const clock=new THREE.Clock();
+  function drift(d,t){ const a=d.g.attributes.position; for(let i=0;i<d.count;i++){ a.array[i*3]-=d.vel[i].s*.012; a.array[i*3+1]+=Math.sin(t*.6+d.vel[i].d)*.003; if(a.array[i*3]<-17) a.array[i*3]=17; } a.needsUpdate=true; }
   function frame(){
     if(!reduce) requestAnimationFrame(frame); if(!vis && !reduce) return;
     const t=clock.getElapsedTime(); mx+=(tx-mx)*.05; my+=(ty-my)*.05;
     cam.position.x=mx*2.2; cam.position.y=1.2-my*1.2; cam.lookAt(0,2,0);
     stars.rotation.y=t*.004; stars.material.opacity=.65+Math.sin(t*1.3)*.15;
-    const a=pg.attributes.position; for(let i=0;i<P;i++){ a.array[i*3+1]-=pv[i].s*.012; a.array[i*3]+=Math.sin(t*pv[i].sw+pv[i].d)*.004; if(a.array[i*3+1]<-7){ a.array[i*3+1]=12; } } a.needsUpdate=true;
+    ring.rotation.z=t*.05; ring2.rotation.z=-t*.08;
+    drift(dBlue,t); drift(dRed,t);
     renderer.render(scene,cam);
   }
   frame();
 })();
 })();
 </script>
+<script src="lightning.js"></script>
 </body>
 </html>
