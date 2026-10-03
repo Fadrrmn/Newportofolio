@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fadhlurrahman Naufal // Portfolio</title>
-<meta name="description" content="Portofolio Fadhlurrahman Naufal Nugraha, mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau.">
+<meta name="description" content="Portofolio Fadhlurrahman Naufal, mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
 <style>html,body{background:#05070d;color:#e9e7f5}</style>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -57,14 +57,24 @@
 
 <main>
 <!-- HERO -->
-<section id="home">
+<section id="home" class="hero">
   <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ambient" aria-hidden="true"></div>
+  <div class="perspective-grid" aria-hidden="true"></div>
+  <div class="energy-ring energy-ring-one" aria-hidden="true"></div>
+  <div class="energy-ring energy-ring-two" aria-hidden="true"></div>
+  <div class="depth-card depth-card-left" aria-hidden="true"><span lang="ja">雷の呼吸</span><b>01</b><small>THUNDER BREATHING</small></div>
+  <div class="depth-card depth-card-right" aria-hidden="true"><span lang="ja">速度</span><b>∞</b><small>FOCUS / SPEED / CRAFT</small></div>
+  <i class="floating-shard shard-one" aria-hidden="true"></i>
+  <i class="floating-shard shard-two" aria-hidden="true"></i>
+  <i class="floating-shard shard-three" aria-hidden="true"></i>
   <canvas id="three" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
-    <div>
-      <div class="status">PILOT :: ONLINE <i lang="ja">| 出撃準備完了</i></div>
-      <p class="greet" lang="ja">ようこそ · SELAMAT DATANG</p>
-      <h1 class="name"><span class="a">MY</span><span class="b">PORTOFOLIO</span></h1>
+    <h1 class="name" aria-label="Portfolio"><span class="a">PORT</span><span class="b">FOLIO</span></h1>
+    <div class="hero-copy">
+      <p class="greet">Hello, saya</p>
+      <p class="jp-label" lang="ja">デザイナー · IT STUDENT</p>
+      <h2 class="hero-name">FADHLURRAHMAN<br>NAUFAL</h2>
       <div class="role">MAHASISWA IT <span>/ IT STUDENT</span></div>
       <p class="lead">Mahasiswa Teknologi Rekayasa Komputer yang tertarik pada software, jaringan, IoT, dan cybersecurity.</p>
       <p class="tag">"Building the future, one line at a time."</p>
@@ -74,14 +84,22 @@
       </div>
       <p class="loc">HANGAR_01 · SECTOR FN <span>· Pekanbaru, Indonesia</span></p>
     </div>
-    <div class="char-wrap" id="charWrap">
+    <div class="char-wrap portrait-wrap" id="charWrap">
+      <div class="sun-disc" aria-hidden="true"></div>
+      <div class="portrait-lightning" aria-hidden="true"></div>
       <div class="char" id="char">
-        <img src="img/character-transparent.png" alt="Ilustrasi mobile suit Gundam bergaya cyberpunk" id="charImg">
+        <img src="img/Naufal-removebg-preview.png" alt="Fadhlurrahman Naufal mengenakan kemeja abu-abu" id="charImg">
         <svg id="charFb" viewBox="0 0 200 300" hidden role="img" aria-label="Siluet karakter cyberpunk"><g fill="#160c2c" stroke="#ff2d78" stroke-width="2"><ellipse cx="100" cy="50" rx="34" ry="38"/><path d="M62 96h76l14 90-14 4v92h-28v-80h-20v80H62v-92l-14-4z"/></g><g fill="#00e5ff"><circle cx="88" cy="52" r="4"/><circle cx="112" cy="52" r="4"/></g><rect x="86" y="120" width="28" height="18" fill="none" stroke="#00e5ff"/></svg>
       </div>
       <i class="brk t"></i><i class="brk b"></i>
       <span class="tagline" style="top:10px;left:0">MS_UNIT_01</span>
       <span class="tagline" style="bottom:10px;right:0">SYNC :: STABLE</span>
+    </div>
+    <div class="hero-note hero-animate"><span>+</span><p>Belajar, membangun,<br>dan terus berkembang.</p></div>
+    <div class="stats hero-animate" aria-label="Ringkasan portofolio">
+      <div><strong>04</strong><span>Proyek<br>unggulan</span></div>
+      <div><strong>10</strong><span>Sertifikat<br>tersimpan</span></div>
+      <div><strong>12</strong><span>Teknologi<br>dipakai</span></div>
     </div>
   </div>
   <div class="scroll" aria-hidden="true">SCROLL</div>
@@ -93,9 +111,9 @@
   <div class="wrap">
     <div class="sec-h reveal"><div class="k">// 01 · 概要</div><h2>WHO ME? <small lang="ja">自己紹介</small></h2></div>
     <div class="about">
-      <div class="photo reveal"><div class="fb" aria-hidden="true"></div><img src="img/foto.png" alt="Foto profil Fadhlurrahman Naufal Nugraha" id="fotoImg"></div>
+      <div class="photo reveal"><div class="fb" aria-hidden="true"></div><img src="img/foto.png" alt="Foto profil Fadhlurrahman Naufal" id="fotoImg"></div>
       <div class="reveal">
-        <h3>Fadhlurrahman Naufal Nugraha</h3>
+        <h3>Fadhlurrahman Naufal</h3>
         <p>Saya mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau. Saya tertarik pada pengembangan aplikasi, web development, jaringan komputer, IoT, dan cybersecurity.</p>
         <p>Saya pernah mengerjakan proyek web dan Android, membuat perangkat berbasis ESP32, serta melakukan konfigurasi dan simulasi jaringan.</p>
         <dl class="facts">
@@ -117,6 +135,10 @@
 <section id="skills" class="sec">
   <div class="wrap">
     <div class="sec-h reveal"><div class="k">// 02 · スキル</div><h2>KEMAMPUAN <small lang="ja">技術スタック</small></h2></div>
+    <div class="education-line reveal">
+      <div><span class="edu-label">PENDIDIKAN SAAT INI</span><strong>Teknologi Rekayasa Komputer</strong><span>Politeknik Caltex Riau</span></div>
+      <b>MAHASISWA AKTIF</b>
+    </div>
     <div class="skills">
       <div class="panel reveal">
         <div class="ph" style="color:var(--cyan)"><span><b style="background:var(--cyan)"></b>WEB &amp; SOFTWARE</span></div>
@@ -141,6 +163,15 @@
             <li class="next"><span class="node" aria-hidden="true">05</span><div><b>DevOps <em lang="ja">デブオプス</em></b><p>Tujuan akhir</p></div></li>
           </ol>
         </div>
+      </div>
+    </div>
+    <div class="work-process reveal">
+      <div class="process-heading"><span class="k">考え方 · CARA SAYA BEKERJA</span><h3>DARI IDE KE IMPLEMENTASI</h3></div>
+      <div class="process-list">
+        <article class="process-item"><span class="process-number">01</span><i lang="ja">聞</i><div><strong>Pahami</strong><p>Menggali kebutuhan, konteks, dan tujuan sebelum menentukan solusi.</p></div></article>
+        <article class="process-item"><span class="process-number">02</span><i lang="ja">考</i><div><strong>Rancang</strong><p>Menyusun pendekatan teknis dan membagi pekerjaan menjadi langkah yang jelas.</p></div></article>
+        <article class="process-item"><span class="process-number">03</span><i lang="ja">創</i><div><strong>Bangun</strong><p>Mengembangkan solusi secara bertahap dengan fokus pada fungsi dan pengalaman.</p></div></article>
+        <article class="process-item"><span class="process-number">04</span><i lang="ja">磨</i><div><strong>Uji &amp; perbaiki</strong><p>Memeriksa hasil, memperbaiki kekurangan, dan merapikan detail implementasi.</p></div></article>
       </div>
     </div>
   </div>
@@ -410,6 +441,24 @@ const observeReveal = () => $$('.reveal:not(.in)').forEach(el=>rIO.observe(el));
 
 /* ===== HERO TILT ===== */
 (function(){
+  const hero=$('#home');
+  if(reduce) return;
+  const reset=()=>{
+    ['--far-x','--far-y','--mid-x','--mid-y','--near-x','--near-y'].forEach(p=>hero.style.setProperty(p,'0px'));
+    hero.style.setProperty('--light-x','50%'); hero.style.setProperty('--light-y','36%');
+  };
+  hero.addEventListener('pointermove',e=>{
+    if(e.pointerType==='touch') return;
+    const r=hero.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    hero.style.setProperty('--far-x',`${x*-18}px`); hero.style.setProperty('--far-y',`${y*-12}px`);
+    hero.style.setProperty('--mid-x',`${x*28}px`); hero.style.setProperty('--mid-y',`${y*18}px`);
+    hero.style.setProperty('--near-x',`${x*42}px`); hero.style.setProperty('--near-y',`${y*26}px`);
+    hero.style.setProperty('--light-x',`${50+x*30}%`); hero.style.setProperty('--light-y',`${36+y*25}%`);
+  });
+  hero.addEventListener('pointerleave',reset);
+})();
+
+(function(){
   const w=$('#charWrap'), c=$('#char'); if(reduce) return;
   w.addEventListener('pointermove',e=>{ const r=w.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; c.style.transform=`rotateY(${x*14}deg) rotateX(${-y*10}deg)`; });
   w.addEventListener('pointerleave',()=>c.style.transform='');
@@ -505,8 +554,8 @@ render(); observeReveal();
   const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xcfe6ff,size:.16,transparent:true,opacity:.8})); scene.add(stars);
   // cincin koloni (wireframe)
   const colony=new THREE.Group();
-  const ring=new THREE.Mesh(new THREE.TorusGeometry(9,.18,8,72),new THREE.MeshBasicMaterial({color:0x2f6bff,wireframe:true,transparent:true,opacity:.55}));
-  const ring2=new THREE.Mesh(new THREE.TorusGeometry(6.2,.1,6,60),new THREE.MeshBasicMaterial({color:0x00e5ff,wireframe:true,transparent:true,opacity:.4}));
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(9,.18,8,72),new THREE.MeshBasicMaterial({color:0xf6bd12,wireframe:true,transparent:true,opacity:.55}));
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(6.2,.1,6,60),new THREE.MeshBasicMaterial({color:0xe96616,wireframe:true,transparent:true,opacity:.4}));
   colony.add(ring,ring2); colony.position.set(7,3,-18); colony.rotation.x=1.1; scene.add(colony);
   // serpihan melayang (biru + merah)
   function debris(count,color,size){
@@ -514,7 +563,7 @@ render(); observeReveal();
     const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3));
     const p=new THREE.Points(g,new THREE.PointsMaterial({color,size,transparent:true,opacity:.8})); scene.add(p); return {g,vel,count};
   }
-  const dBlue=debris(46,0x6ea8ff,.24), dRed=debris(18,0xff5a5a,.2);
+  const dBlue=debris(46,0xf6bd12,.24), dRed=debris(18,0xe96616,.2);
   function size(){ const w=hero.clientWidth,h=hero.clientHeight; renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
   size(); addEventListener('resize',size);
   let mx=0,my=0,tx=0,ty=0; if(!reduce) hero.addEventListener('pointermove',e=>{ const r=hero.getBoundingClientRect(); tx=(e.clientX-r.left)/r.width-.5; ty=(e.clientY-r.top)/r.height-.5; });
