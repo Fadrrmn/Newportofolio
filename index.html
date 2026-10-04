@@ -47,6 +47,7 @@
         <li><a href="#skills" data-s="skills">SKILLS<small lang="ja">スキル</small></a></li>
         <li><a href="#projects" data-s="projects">PROJECTS<small lang="ja">プロジェクト</small></a></li>
         <li><a href="#certs" data-s="certs">CERTS<small lang="ja">証明書</small></a></li>
+        <li><a href="#music" data-s="music">MUSIC<small lang="ja">お気に入り</small></a></li>
         <li><a href="#contact" data-s="contact">CONTACT<small lang="ja">連絡</small></a></li>
       </ul>
     </nav>
@@ -63,8 +64,8 @@
   <div class="perspective-grid" aria-hidden="true"></div>
   <div class="energy-ring energy-ring-one" aria-hidden="true"></div>
   <div class="energy-ring energy-ring-two" aria-hidden="true"></div>
-  <div class="depth-card depth-card-left" aria-hidden="true"><span lang="ja">雷の呼吸</span><b>01</b><small>THUNDER BREATHING</small></div>
-  <div class="depth-card depth-card-right" aria-hidden="true"><span lang="ja">速度</span><b>∞</b><small>FOCUS / SPEED / CRAFT</small></div>
+  <div class="depth-card depth-card-left" aria-hidden="true"><img class="zenitsu-art" src="img/zenitsu.png" alt=""><span lang="ja">雷の呼吸</span><b>01</b><small>THUNDER BREATHING</small></div>
+  <div class="depth-card depth-card-right" aria-hidden="true"><img class="zenitsu-art" src="img/zenitsu2.jpg" alt=""><span lang="ja">雷の呼吸</span><b>02</b><small>THUNDERCLAP</small></div>
   <i class="floating-shard shard-one" aria-hidden="true"></i>
   <i class="floating-shard shard-two" aria-hidden="true"></i>
   <i class="floating-shard shard-three" aria-hidden="true"></i>
@@ -209,10 +210,35 @@
   </div>
 </section>
 
+<!-- FAVORITE TRACKS -->
+<section id="music" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">// 05 · お気に入りの曲</div><h2>FAVORITE TRACKS <small lang="ja">お気に入りの曲</small></h2></div>
+    <div class="music-panel reveal">
+      <div class="music-copy">
+        <span class="music-label"><i aria-hidden="true"></i> NOW PLAYING · MY PLAYLIST</span>
+        <h3>Musik favorit saya</h3>
+        <p>Kumpulan lagu pilihan yang menemani waktu belajar, berkarya, dan bersantai.</p>
+        <a class="music-link" href="https://open.spotify.com/playlist/4AZsFnaYwPnOMCNKDWQcNl?si=f4ce466b09b94008" target="_blank" rel="noopener noreferrer">BUKA DI SPOTIFY <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="spotify-embed">
+        <iframe
+          title="Playlist Favorite Tracks Fadhlurrahman di Spotify"
+          src="https://open.spotify.com/embed/playlist/4AZsFnaYwPnOMCNKDWQcNl?utm_source=generator&amp;theme=0"
+          width="100%"
+          height="352"
+          style="border:0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="sec">
   <div class="wrap">
-    <div class="sec-h reveal"><div class="k">// 05 · 連絡</div><h2>KONTAK <small lang="ja">お問い合わせ</small></h2></div>
+    <div class="sec-h reveal"><div class="k">// 06 · 連絡</div><h2>KONTAK <small lang="ja">お問い合わせ</small></h2></div>
     <div class="contact">
       <div class="reveal">
         <p>Tertarik berkolaborasi, berdiskusi tentang teknologi, atau sekadar menyapa? Saya terbuka untuk koneksi dan peluang baru.</p>
@@ -276,7 +302,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ===== JAPANESE MATRIX RAIN ===== */
 (()=>{
   const glyphs='アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン零壱弐参四五六七八九';
-  const rainSections=['about','skills','projects','certs','contact'].map(id=>document.getElementById(id));
+  const rainSections=['about','skills','projects','certs','music','contact'].map(id=>document.getElementById(id));
   const rains=rainSections.map(section=>{
     const canvas=document.createElement('canvas');
     canvas.className='jp-rain'; canvas.setAttribute('aria-hidden','true');
@@ -425,7 +451,7 @@ const clk = $('#clock'); const tick = () => clk.textContent = fmt.format(new Dat
 const burger = $('#burger'), links = $('#links');
 burger.addEventListener('click',()=>{ const o=links.classList.toggle('open'); burger.setAttribute('aria-expanded',o); burger.setAttribute('aria-label',o?'Tutup menu navigasi':'Buka menu navigasi'); });
 $$('#links a').forEach(a=>a.addEventListener('click',()=>{ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }));
-const secs = ['home','about','skills','projects','certs','contact'].map(id=>document.getElementById(id));
+const secs = ['home','about','skills','projects','certs','music','contact'].map(id=>document.getElementById(id));
 const navIO = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ $$('#links a').forEach(a=>{ const on=a.dataset.s===e.target.id; a.classList.toggle('active',on); on?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'); }); } }),{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>navIO.observe(s));
 
